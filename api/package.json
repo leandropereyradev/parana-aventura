@@ -1,0 +1,28 @@
+{
+  "name": "parana-aventura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandropereyradev/parana-aventura.git"
+  },
+  "author": "Leandro Pereyra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandropereyradev/parana-aventura/issues"
+  },
+  "homepage": "https://github.com/leandropereyradev/parana-aventura#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
