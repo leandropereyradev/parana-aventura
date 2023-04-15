@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
 
+require("./config/db.config");
 const app = express();
 
 app.use(logger("dev"));
