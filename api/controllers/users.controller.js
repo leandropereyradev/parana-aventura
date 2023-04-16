@@ -1,5 +1,4 @@
 const Users = require("../models/user.model");
-const createError = require("http-errors");
 
 module.exports.register = (req, res, next) => {
   Users.create(req.body)
@@ -7,32 +6,19 @@ module.exports.register = (req, res, next) => {
     .catch(next);
 };
 
-module.exports.detail = (req, res, next) => {
-  Users.findById(req.params.id)
-    .then((user) => {
-      if (!user) next(createError(404, "User not found"));
-      else res.json(user);
-    })
-    .catch(next);
-};
+module.exports.detail = (req, res, next) => res.json(req.user);
 
 module.exports.update = (req, res, next) => {
-  Users.findByIdAndUpdate(req.params.id, req.body, {
-    runValidators: true,
-    new: true,
-  })
-    .then((user) => {
-      if (!user) next(createError(404, "User not found"));
-      else res.json(user);
-    })
+  Object.assign(req.user, req.body);
+
+  req.user
+    .save()
+    .then((user) => res.json(user))
     .catch(next);
 };
 
 module.exports.delete = (req, res, next) => {
-  Users.findByIdAndDelete(req.params.id)
-    .then((user) => {
-      if (!user) next(createError(404, "User not found"));
-      else res.status(204).send();
-    })
+  Users.deleteOne({ _id: req.user.id })
+    .then((user) => res.status(204).send())
     .catch(next);
 };
