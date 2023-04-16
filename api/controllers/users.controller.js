@@ -1,8 +1,20 @@
+const { sendConfirmationEmail } = require("../config/mailer.config");
 const Users = require("../models/user.model");
 
 module.exports.register = (req, res, next) => {
   Users.create(req.body)
-    .then((user) => res.status(201).json(user))
+    .then((user) => {
+      sendConfirmationEmail(user);
+      res.status(201).json(user);
+    })
+    .catch(next);
+};
+
+module.exports.confirm = (req, res, next) => {
+  req.user.confirm = true;
+  req.user
+    .save()
+    .then((user) => res.redirect(`${process.env.WEB_URL}/login`))
     .catch(next);
 };
 

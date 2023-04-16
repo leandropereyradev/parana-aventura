@@ -8,6 +8,7 @@ const createError = require("http-errors");
 require("./config/db.config");
 const app = express();
 
+app.use(require("./config/cors.config"));
 app.use(express.json());
 app.use(logger("dev"));
 
@@ -25,6 +26,11 @@ app.use((error, req, res, next) => {
   else if (error instanceof mongoose.Error.CastError && error.path === "_id") {
     const sourseName = error.model().constructor.modelName;
     error = createError(404, `${sourseName} not found`);
+  } else if (error.message.includes("E11000")) {
+    // Object.keys(error.keyValue).forEach(
+    //   (key) => (error.keyValue[key] = "This mail already exists")
+    // );
+    error = createError(409, "This email already exists");
   } else if (!error.status) error = createError(500, error);
 
   const data = {
