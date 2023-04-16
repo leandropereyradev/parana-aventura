@@ -6,12 +6,6 @@ const fishSchema = new Schema(
     name: String,
     destription: String,
     image: String,
-    fishingZone: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "FishingZone",
-      },
-    ],
   },
   {
     timestamps: true,

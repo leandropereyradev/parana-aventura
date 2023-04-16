@@ -8,12 +8,6 @@ const lodgingSchema = new Schema(
     destription: String,
     image: String,
     price: Number,
-    fishingZone: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "FishingZone",
-      },
-    ],
   },
   {
     timestamps: true,
