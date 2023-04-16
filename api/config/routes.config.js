@@ -12,4 +12,6 @@ router.get("/users/:id/confirm", userExists, users.confirm);
 router.patch("/users/:id", userExists, cleanBody, users.update);
 router.delete("/users/:id", userExists, users.delete);
 
+router.post("/login", users.login);
+
 module.exports = router;
