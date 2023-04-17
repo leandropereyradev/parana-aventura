@@ -11,6 +11,10 @@ const fishingZoneSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    rating: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,
