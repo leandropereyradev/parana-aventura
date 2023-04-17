@@ -4,7 +4,7 @@ const FishingZone = require("../models/fishingZone.model");
 
 // Lodging
 module.exports.lodgingList = (req, res, next) => {
-  Lodging.find()
+  Lodging.find({ status: true })
     .then((lodgings) => res.json(lodgings))
     .catch(next);
 };
@@ -17,8 +17,8 @@ module.exports.lodgingDetail = (req, res, next) => {
 
 // Fishing Zone
 module.exports.fishingZoneList = (req, res, next) => {
-  FishingZone.find()
-    .populate("lodgings")
+  FishingZone.find({ status: true })
+    .populate({ path: "lodgings", match: { status: true } })
     .populate("fish")
     .then((zones) => res.json(zones))
     .catch(next);

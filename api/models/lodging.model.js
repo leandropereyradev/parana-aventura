@@ -6,8 +6,13 @@ const lodgingSchema = new Schema(
     name: String,
     destription: String,
     ubication: String,
-    image: String,
+    image: Array,
     price: Number,
+    services: Array,
+    status: {
+      type: Boolean,
+      default: false,
+    },
     fishingZone: [
       {
         type: mongoose.Schema.Types.ObjectId,

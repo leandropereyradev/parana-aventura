@@ -38,6 +38,11 @@ const userSchema = new Schema(
       type: Boolean,
       default: process.env.USER_CONFIRMATION_REQUIRED === "false",
     },
+    rol: {
+      type: String,
+      default: "user",
+      enum: ["user", "admin"],
+    },
   },
   {
     timestamps: true,

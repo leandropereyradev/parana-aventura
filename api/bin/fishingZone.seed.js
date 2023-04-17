@@ -8,12 +8,14 @@ const fishingZones = [
     description: "description 1",
     ubication: "ubication 1",
     image: "image 1",
+    status: true,
   },
   {
     name: "FishingZone 2",
     description: "description 2",
     ubication: "ubication 2",
     image: "image 2",
+    status: false,
   },
 ];
 

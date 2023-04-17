@@ -7,6 +7,10 @@ const fishingZoneSchema = new Schema(
     ubication: String,
     destription: String,
     image: String,
+    status: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
