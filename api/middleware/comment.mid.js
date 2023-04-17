@@ -15,7 +15,10 @@ module.exports.commentExists = (req, res, next) => {
 };
 
 module.exports.checkAuthor = (req, res, next) => {
-  if (req.comment.user.toString() !== req.user.id.toString())
-    next(createError(403, "Forbidden"));
-  else next();
+  if (
+    req.user.rol === "admin" ||
+    req.comment.user.toString() === req.user.id.toString()
+  )
+    next();
+  else next(createError(403, "Forbidden"));
 };

@@ -8,7 +8,7 @@ const lodging = require("../controllers/lodging.controllers");
 const fish = require("../controllers/fish.controllers");
 
 const { userExists } = require("../middleware/user.mid");
-const { cleanBody, auth } = require("../middleware/secure.mid");
+const { cleanBody, auth, isAdmin } = require("../middleware/secure.mid");
 const {
   fishingZoneExists,
   lodgingExists,
@@ -17,6 +17,7 @@ const {
 const { commentExists, checkAuthor } = require("../middleware/comment.mid");
 
 // Users
+router.get("/users", userExists, isAdmin, users.list);
 router.post("/users", cleanBody, users.register);
 router.get("/users/:id", userExists, users.detail);
 router.get("/users/:id/confirm", userExists, users.confirm);

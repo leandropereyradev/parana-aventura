@@ -1,7 +1,7 @@
 const Lodging = require("../models/lodging.model");
 
 module.exports.list = (req, res, next) => {
-  Lodging.find({ status: true })
+  Lodging.find()
     .then((lodgings) => res.json(lodgings))
     .catch(next);
 };

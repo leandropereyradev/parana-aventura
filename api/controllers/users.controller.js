@@ -20,6 +20,12 @@ module.exports.confirm = (req, res, next) => {
     .catch(next);
 };
 
+module.exports.list = (req, res, next) => {
+  User.find()
+    .then((users) => res.json(users))
+    .catch(next);
+};
+
 module.exports.detail = (req, res, next) => res.json(req.user);
 
 module.exports.update = (req, res, next) => {

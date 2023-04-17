@@ -1,17 +1,15 @@
 const FishingZone = require("../models/fishingZone.model");
 
 module.exports.list = (req, res, next) => {
-  FishingZone.find({ status: true })
-    .populate({ path: "lodgings", match: { status: true } })
-    .populate("fish comments")
+  FishingZone.find()
+    .populate("lodgings fish comments")
     .then((zones) => res.json(zones))
     .catch(next);
 };
 
 module.exports.detail = (req, res, next) => {
   FishingZone.findOne({ _id: req.zone.id })
-    .populate({ path: "lodgings", match: { status: true } })
-    .populate("fish comments")
+    .populate("lodgings fish comments")
     .then((lodging) => res.json(lodging))
     .catch(next);
 };
