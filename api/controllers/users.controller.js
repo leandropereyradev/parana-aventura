@@ -1,9 +1,10 @@
 const { sendConfirmationEmail } = require("../config/mailer.config");
-const Users = require("../models/user.model");
+const User = require("../models/user.model");
 const createError = require("http-errors");
+const jwt = require("jsonwebtoken");
 
 module.exports.register = (req, res, next) => {
-  Users.create(req.body)
+  User.create(req.body)
     .then((user) => {
       // sendConfirmationEmail(user);
       res.status(201).json(user);
@@ -31,13 +32,13 @@ module.exports.update = (req, res, next) => {
 };
 
 module.exports.delete = (req, res, next) => {
-  Users.deleteOne({ _id: req.user.id })
+  User.deleteOne({ _id: req.user.id })
     .then((user) => res.status(204).send())
     .catch(next);
 };
 
 module.exports.login = (req, res, next) => {
-  Users.findOne({ email: req.body.email })
+  User.findOne({ email: req.body.email })
     .then((user) => {
       if (!user) next(createError(401, "Invalid email or password"));
 
@@ -46,7 +47,13 @@ module.exports.login = (req, res, next) => {
       user.checkPassword(req.body.password).then((passwordConfirmated) => {
         if (!passwordConfirmated)
           next(createError(401, "Invalid email or password"));
-        else res.json(user);
+
+        const token = jwt.sign(
+          { sub: user.id, exp: Date.now() / 1000 + 3600 },
+          process.env.JWT_SECRET
+        );
+
+        res.json({ ...user.toJSON(), token });
       });
     })
     .catch(next);
