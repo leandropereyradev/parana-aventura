@@ -9,7 +9,11 @@ module.exports.lodgingList = (req, res, next) => {
     .catch(next);
 };
 
-module.exports.lodgingDetail = (req, res, next) => {};
+module.exports.lodgingDetail = (req, res, next) => {
+  Lodging.findOne({ _id: req.lodging.id })
+    .then((lodging) => res.json(lodging))
+    .catch(next);
+};
 
 // Fishing Zone
 module.exports.fishingZoneList = (req, res, next) => {
@@ -19,7 +23,14 @@ module.exports.fishingZoneList = (req, res, next) => {
     .then((zones) => res.json(zones))
     .catch(next);
 };
-module.exports.fishingZoneDetail = (req, res, next) => {};
+
+module.exports.fishingZoneDetail = (req, res, next) => {
+  FishingZone.findOne({ _id: req.zone.id })
+    .populate("lodgings")
+    .populate("fish")
+    .then((lodging) => res.json(lodging))
+    .catch(next);
+};
 
 // Fishes
 module.exports.fishesList = (req, res, next) => {
@@ -27,4 +38,9 @@ module.exports.fishesList = (req, res, next) => {
     .then((fishes) => res.json(fishes))
     .catch(next);
 };
-module.exports.fishesDetail = (req, res, next) => {};
+
+module.exports.fishesDetail = (req, res, next) => {
+  Fish.findOne({ _id: req.fish.id })
+    .then((lodging) => res.json(lodging))
+    .catch(next);
+};

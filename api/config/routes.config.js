@@ -6,6 +6,11 @@ const services = require("../controllers/services.controllers");
 
 const { userExists } = require("../middleware/user.mid");
 const { cleanBody, auth } = require("../middleware/secure.mid");
+const {
+  fishingZoneExists,
+  lodgingExists,
+  fishExists,
+} = require("../middleware/services.mid");
 
 // Users
 router.post("/users", cleanBody, users.register);
@@ -18,10 +23,14 @@ router.post("/login", users.login);
 
 // Lodging
 router.get("/lodgings", services.lodgingList);
-router.get("/lodgings/:id", services.lodgingDetail);
+router.get("/lodgings/:id", lodgingExists, services.lodgingDetail);
 
 // FishingZone
 router.get("/fishing-zones", services.fishingZoneList);
-router.get("/fishing-zones/:id", services.fishingZoneDetail);
+router.get("/fishing-zones/:id", fishingZoneExists, services.fishingZoneDetail);
+
+// Fish
+router.get("/fishes", services.fishesList);
+router.get("/fishes/:id", fishExists, services.fishesDetail);
 
 module.exports = router;
