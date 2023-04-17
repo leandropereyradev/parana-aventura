@@ -11,7 +11,7 @@ const lodgings = [
     price: 30,
     services: ["breakfast", "pool", "spa"],
     status: true,
-    fishingZone: ["643d6430cff950b7351d6337", "643d6430cff950b7351d6338"],
+    fishingZone: ["643d9d5ffb06047aa5b360a6", "643d9d5ffb06047aa5b360a7"],
   },
   {
     name: "Lodging 2",
@@ -21,7 +21,7 @@ const lodgings = [
     price: 30,
     services: ["breakfast", "dock", "spa"],
     status: false,
-    fishingZone: ["643d6430cff950b7351d6337"],
+    fishingZone: ["643d9d5ffb06047aa5b360a6"],
   },
 ];
 

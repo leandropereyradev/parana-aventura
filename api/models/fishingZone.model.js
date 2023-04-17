@@ -44,5 +44,12 @@ fishingZoneSchema.virtual("fish", {
   justOne: false,
 });
 
+fishingZoneSchema.virtual("comments", {
+  ref: "Comment",
+  localField: "_id",
+  foreignField: "fishingZone",
+  justOne: false,
+});
+
 const FishingZone = mongoose.model("FishingZone", fishingZoneSchema);
 module.exports = FishingZone;
