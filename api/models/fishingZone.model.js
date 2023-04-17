@@ -7,18 +7,6 @@ const fishingZoneSchema = new Schema(
     ubication: String,
     destription: String,
     image: String,
-    fishes: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Fish",
-      },
-    ],
-    lodging: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Lodging",
-      },
-    ],
   },
   {
     timestamps: true,
@@ -33,6 +21,20 @@ const fishingZoneSchema = new Schema(
     },
   }
 );
+
+fishingZoneSchema.virtual("lodgings", {
+  ref: "Lodging",
+  localField: "_id",
+  foreignField: "fishingZone",
+  justOne: false,
+});
+
+fishingZoneSchema.virtual("fish", {
+  ref: "Fish",
+  localField: "_id",
+  foreignField: "fishingZone",
+  justOne: false,
+});
 
 const FishingZone = mongoose.model("FishingZone", fishingZoneSchema);
 module.exports = FishingZone;
