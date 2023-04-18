@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 const lodgingSchema = new Schema(
   {
     name: String,
-    destription: String,
-    ubication: String,
+    description: String,
     image: Array,
     price: Number,
     services: Array,

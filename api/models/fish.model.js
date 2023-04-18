@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const fishSchema = new Schema(
   {
     name: String,
-    destription: String,
+    description: String,
     image: String,
     fishingZone: [
       {
