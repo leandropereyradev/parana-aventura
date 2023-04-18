@@ -44,8 +44,8 @@ fishingZoneSchema.virtual("fish", {
   justOne: false,
 });
 
-fishingZoneSchema.virtual("comments", {
-  ref: "Comment",
+fishingZoneSchema.virtual("commentFishingZones", {
+  ref: "commentFishingZone",
   localField: "_id",
   foreignField: "fishingZone",
   justOne: false,

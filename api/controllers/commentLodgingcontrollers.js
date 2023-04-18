@@ -1,9 +1,9 @@
-const Comment = require("../models/comment.model");
+const CommentLodging = require("../models/commentLodging.model");
 
 module.exports.create = (req, res, next) => {
-  Comment.create({
+  CommentLodging.create({
     comment: req.body.comment,
-    fishingZone: req.params.id,
+    lodging: req.params.id,
     user: req.user.id,
   })
     .then((comment) => res.json(comment))
@@ -13,19 +13,19 @@ module.exports.create = (req, res, next) => {
 module.exports.update = (req, res, next) => {
   const comment = {
     comment: req.body.comment,
-    fishingZone: req.params.id,
+    lodging: req.params.id,
     user: req.user.id,
   };
-  Object.assign(req.comment, comment);
+  Object.assign(req.commentLodging, comment);
 
-  req.comment
+  req.commentLodging
     .save()
     .then((comment) => res.json(comment))
     .catch(next);
 };
 
 module.exports.delete = (req, res, next) => {
-  Comment.deleteOne({ _id: req.comment.id })
+  CommentLodging.deleteOne({ _id: req.commentLodging.id })
     .then(() => res.status(204).send())
     .catch(next);
 };

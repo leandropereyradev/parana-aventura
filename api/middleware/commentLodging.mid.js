@@ -1,23 +1,23 @@
-const Comment = require("../models/comment.model");
+const CommentLodging = require("../models/commentLodging.model");
 const createError = require("http-errors");
 
-module.exports.commentExists = (req, res, next) => {
+module.exports.commentLodgingExists = (req, res, next) => {
   const commentId = req.params.commentId;
 
-  Comment.findById(commentId)
+  CommentLodging.findById(commentId)
     .then((comment) => {
       if (comment) {
-        req.comment = comment;
+        req.commentLodging = comment;
         next();
       } else next(createError(404, "Comment not found"));
     })
     .catch(next);
 };
 
-module.exports.checkAuthor = (req, res, next) => {
+module.exports.checkAuthorLodging = (req, res, next) => {
   if (
     req.user.rol === "admin" ||
-    req.comment.user.toString() === req.user.id.toString()
+    req.commentLodging.user.toString() === req.user.id.toString()
   )
     next();
   else next(createError(403, "Forbidden"));

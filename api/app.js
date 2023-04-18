@@ -12,7 +12,10 @@ app.use(require("./config/cors.config"));
 app.use(express.json());
 app.use(logger("dev"));
 
-app.use("/api", require("./config/routes.config"));
+app.use("/api", require("./config/user.config"));
+app.use("/api", require("./config/fishingZone.config"));
+app.use("/api", require("./config/fish.config"));
+app.use("/api", require("./config/lodging.config"));
 
 app.use((req, res, next) => next(createError(404, "Route not found")));
 

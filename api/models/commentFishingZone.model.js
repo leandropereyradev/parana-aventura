@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const commentSchema = new Schema(
+const commentFishingZoneSchema = new Schema(
   {
     comment: {
       type: String,
@@ -33,5 +33,8 @@ const commentSchema = new Schema(
   }
 );
 
-const Comment = mongoose.model("Comment", commentSchema);
-module.exports = Comment;
+const commentFishingZone = mongoose.model(
+  "commentFishingZone",
+  commentFishingZoneSchema
+);
+module.exports = commentFishingZone;

@@ -2,14 +2,14 @@ const FishingZone = require("../models/fishingZone.model");
 
 module.exports.list = (req, res, next) => {
   FishingZone.find()
-    .populate("lodgings fish comments")
+    .populate("lodgings fish commentFishingZones")
     .then((zones) => res.json(zones))
     .catch(next);
 };
 
 module.exports.detail = (req, res, next) => {
   FishingZone.findOne({ _id: req.zone.id })
-    .populate("lodgings fish comments")
+    .populate("lodgings fish commentFishingZones")
     .then((lodging) => res.json(lodging))
     .catch(next);
 };

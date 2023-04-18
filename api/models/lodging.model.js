@@ -13,6 +13,10 @@ const lodgingSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    rating: {
+      type: Number,
+      default: 0,
+    },
     fishingZone: [
       {
         type: mongoose.Schema.Types.ObjectId,
