@@ -50,7 +50,7 @@ router.patch(
   checkAuthor,
   comment.update
 );
-router.post(
+router.delete(
   "/fishing-zones/:id/comment/:commentId",
   auth,
   fishingZoneExists,
