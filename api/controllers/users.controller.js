@@ -4,6 +4,8 @@ const createError = require("http-errors");
 const jwt = require("jsonwebtoken");
 
 module.exports.register = (req, res, next) => {
+  if (req.file) req.body.image = req.file.path;
+
   User.create(req.body)
     .then((user) => {
       // sendConfirmationEmail(user);

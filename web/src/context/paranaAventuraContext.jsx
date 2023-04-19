@@ -1,14 +1,17 @@
 import { createContext, useContext, useState } from "react";
+import userServices from "../services/user";
 
 export const ParanaAventuraContext = createContext();
 
 export const ParanaAventuraProvider = ({ children }) => {
-  const [user, setUser] = useState("hola");
+  const [user, setUser] = useState();
 
-  const handleUserContext = (action, info) => {
+  const handleUserContext = async (action, info) => {
     switch (action) {
-      case value:
-        break;
+      case "REGISTER":
+        const response = await userServices.register(info);
+        setUser(response);
+        return response;
 
       default:
         break;

@@ -31,8 +31,8 @@ const userSchema = new Schema(
       minlength: [9, "Your password needs at least of 9 numbers"],
     },
     image: {
-      type: String,
-      required: "Student image url is required",
+      type: Object,
+      required: "Your image is required",
     },
     confirm: {
       type: Boolean,
