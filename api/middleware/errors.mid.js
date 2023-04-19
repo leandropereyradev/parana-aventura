@@ -8,7 +8,10 @@ const errors = (error, req, res, next) => {
     const sourseName = error.model().constructor.modelName;
     error = createError(404, `${sourseName} not found`);
   } else if (error.message.includes("E11000")) {
-    error = createError(409, "This email already exists");
+    Object.keys(error.keyValue).forEach(
+      (key) => (error.keyValue[key] = "Already exists")
+    );
+    error = createError(409, { errors: error.keyValue });
   } else if (!error.status) error = createError(500, error);
 
   console.log(error);
@@ -19,7 +22,8 @@ const errors = (error, req, res, next) => {
   if (error.errors) {
     const errors = Object.keys(error.errors).reduce(
       (errorsObject, errorKey) => {
-        errorsObject[errorKey] = error.errors[errorKey].message;
+        errorsObject[errorKey] =
+          error.errors[errorKey]?.message || error.errors[errorKey];
 
         return errorsObject;
       },
