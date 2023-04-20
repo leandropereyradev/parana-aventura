@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParanaAventuraContext } from "../context/paranaAventuraContext";
+import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const { action } = useParanaAventuraContext();
+  const navegate = useNavigate();
+  const location = useLocation();
 
   const {
     register,
@@ -12,15 +15,15 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm({
     mode: "onBlur",
-    defaultValues: { username: location?.state?.student?.username },
+    defaultValues: { email: location?.state?.user?.email },
   });
-  const [serverError, setServerError] = useState(undefined);
+  const [serverError, setServerError] = useState();
 
   const onLoginUser = async (user) => {
     try {
       setServerError();
       await action.handleUserContext("LOGIN", user);
-      // navegate to '/'
+      navegate("/");
     } catch (error) {
       const errorErrors = error.response?.data?.errors;
       const errorMessage = error.response?.data?.message;

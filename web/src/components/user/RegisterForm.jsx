@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParanaAventuraContext } from "../context/paranaAventuraContext";
+import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
   const { action } = useParanaAventuraContext();
+  const navegate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -24,7 +27,8 @@ const RegisterForm = () => {
       formData.append("email", user.email);
 
       user = await action.handleUserContext("REGISTER", formData);
-      // TODO: navigate to /login' with { state: { user } }
+
+      navegate("/login", { state: { user } });
     } catch (error) {
       const errorErrors = error.response?.data?.errors;
       const errorMessage = error.response?.data?.message;
