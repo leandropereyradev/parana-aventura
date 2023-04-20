@@ -1,10 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import userServices from "../services/user";
+import fishingZoneServices from "../services/fishing-zone";
 
 export const ParanaAventuraContext = createContext();
 
 export const ParanaAventuraProvider = ({ children }) => {
   const [user, setUser] = useState();
+  const [fishingZones, setFishingZones] = useState();
 
   const handleUserContext = async (action, user, id) => {
     switch (action) {
@@ -34,9 +36,24 @@ export const ParanaAventuraProvider = ({ children }) => {
     }
   };
 
+  const handleFishingZoneContext = async (action, fishingZone, id) => {
+    switch (action) {
+      case "LIST":
+        const fishingZonesList = await fishingZoneServices.list();
+        setFishingZones(fishingZonesList);
+        return fishingZonesList;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <ParanaAventuraContext.Provider
-      value={{ payload: { user }, action: { handleUserContext } }}
+      value={{
+        payload: { user, fishingZones },
+        action: { handleUserContext, handleFishingZoneContext },
+      }}
     >
       {children}
     </ParanaAventuraContext.Provider>

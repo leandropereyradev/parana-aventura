@@ -3,6 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import UserPage from "./pages/UserPage";
 import EditUserPage from "./pages/EditUserPage";
+import FishingZoneListPage from "./pages/FishingZoneListPage";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/user/:id" element={<UserPage />} />
         <Route path="/user/edit" element={<EditUserPage />} />
+        <Route path="/fishing-zones" element={<FishingZoneListPage />} />
       </Routes>
     </div>
   );
