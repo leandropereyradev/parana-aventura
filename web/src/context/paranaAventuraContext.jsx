@@ -6,7 +6,6 @@ export const ParanaAventuraContext = createContext();
 
 export const ParanaAventuraProvider = ({ children }) => {
   const [user, setUser] = useState();
-  const [fishingZones, setFishingZones] = useState();
 
   const handleUserContext = async (action, user, id) => {
     switch (action) {
@@ -36,12 +35,13 @@ export const ParanaAventuraProvider = ({ children }) => {
     }
   };
 
-  const handleFishingZoneContext = async (action, fishingZone, id) => {
+  const handleFishingZoneContext = async (action, id) => {
     switch (action) {
       case "LIST":
-        const fishingZonesList = await fishingZoneServices.list();
-        setFishingZones(fishingZonesList);
-        return fishingZonesList;
+        return await fishingZoneServices.list();
+
+      case "DETAIL":
+        return await fishingZoneServices.detail(id);
 
       default:
         break;
@@ -51,7 +51,7 @@ export const ParanaAventuraProvider = ({ children }) => {
   return (
     <ParanaAventuraContext.Provider
       value={{
-        payload: { user, fishingZones },
+        payload: { user },
         action: { handleUserContext, handleFishingZoneContext },
       }}
     >

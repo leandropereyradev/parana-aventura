@@ -4,6 +4,7 @@ import RegisterPage from "./pages/RegisterPage";
 import UserPage from "./pages/UserPage";
 import EditUserPage from "./pages/EditUserPage";
 import FishingZoneListPage from "./pages/FishingZoneListPage";
+import FishingZoneDetailPage from "./pages/FishingZoneDetailPage";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/user/:id" element={<UserPage />} />
         <Route path="/user/edit" element={<EditUserPage />} />
         <Route path="/fishing-zones" element={<FishingZoneListPage />} />
+        <Route path="/fishing-zones/:id" element={<FishingZoneDetailPage />} />
       </Routes>
     </div>
   );

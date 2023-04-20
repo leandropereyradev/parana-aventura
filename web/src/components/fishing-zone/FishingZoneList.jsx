@@ -1,28 +1,37 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
+import { useNavigate } from "react-router-dom";
 
 const FishingZoneList = () => {
-  const { action, payload } = useParanaAventuraContext();
+  const [fishingZones, setFishingZones] = useState();
+  const { action } = useParanaAventuraContext();
+  const navegate = useNavigate();
 
   useEffect(() => {
     async function listFishingZones() {
       try {
-        await action.handleFishingZoneContext("LIST");
+        const payload = await action.handleFishingZoneContext("LIST");
+        setFishingZones(payload);
       } catch (error) {
         console.error(error);
       }
     }
     listFishingZones();
   }, []);
+
   return (
     <>
-      {payload.fishingZones ? (
-        payload.fishingZones.map((fishingZone) => (
+      {fishingZones !== undefined ? (
+        fishingZones?.map((fishingZone) => (
           <div key={fishingZone.id}>
             <h1>{fishingZone.name}</h1>
             <img src={fishingZone.image} alt={fishingZone.name} />
             <p>{fishingZone.description.substring(0, 220) + "..."}</p>
-            <a href={`/fishing-zones/${fishingZone.id}`}>Ver zona</a>
+            <button
+              onClick={() => navegate(`/fishing-zones/${fishingZone.id}`)}
+            >
+              Ver zona
+            </button>
 
             <div>
               <h1>Hospedajes</h1>
@@ -33,7 +42,9 @@ const FishingZoneList = () => {
                   {lodging.services.map((service, i) => (
                     <p key={i}>{service}</p>
                   ))}
-                  <a href={`/lodgings/${lodging.id}`}>Ver hospedaje</a>
+                  <button onClick={() => navegate(`/lodgings/${lodging.id}`)}>
+                    Ver hospedaje
+                  </button>
                 </div>
               ))}
             </div>
