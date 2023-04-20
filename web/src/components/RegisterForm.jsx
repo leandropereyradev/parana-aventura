@@ -26,13 +26,15 @@ const RegisterForm = () => {
       user = await action.handleUserContext("REGISTER", formData);
       // TODO: navigate to /login' with { state: { user } }
     } catch (error) {
-      const errors = error.response?.data?.errors;
-      if (errors) {
+      const errorErrors = error.response?.data?.errors;
+      const errorMessage = error.response?.data?.message;
+
+      if (errorErrors) {
         Object.keys(errors).forEach((inputName) =>
           setError(inputName, { message: errors[inputName] })
         );
-      } else {
-        setServerError(error.message);
+      } else if (errorMessage) {
+        setServerError(errorMessage);
       }
     }
   };

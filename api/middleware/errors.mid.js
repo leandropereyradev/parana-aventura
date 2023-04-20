@@ -32,7 +32,6 @@ const errors = (error, req, res, next) => {
 
     data.errors = errors;
   }
-
   res.status(error.status).json(data);
 };
 

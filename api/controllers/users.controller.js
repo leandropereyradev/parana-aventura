@@ -48,13 +48,14 @@ module.exports.delete = (req, res, next) => {
 module.exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
-      if (!user) next(createError(401, "Invalid email or password"));
+      if (!user) return next(createError(401, "Invalid email or password"));
 
-      if (!user.confirm) next(createError(401, "Please confirm your account"));
+      if (!user.confirm)
+        return next(createError(401, "Please confirm your account"));
 
       user.checkPassword(req.body.password).then((passwordConfirmated) => {
         if (!passwordConfirmated)
-          next(createError(401, "Invalid email or password"));
+          return next(createError(401, "Invalid email or password"));
 
         const token = jwt.sign(
           { sub: user.id, exp: Date.now() / 1000 + 3600 },

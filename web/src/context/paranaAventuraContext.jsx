@@ -9,9 +9,15 @@ export const ParanaAventuraProvider = ({ children }) => {
   const handleUserContext = async (action, info) => {
     switch (action) {
       case "REGISTER":
-        const response = await userServices.register(info);
-        setUser(response);
-        return response;
+        const resRegister = await userServices.register(info);
+        setUser(resRegister);
+        return resRegister;
+
+      case "LOGIN":
+        const userLogin = await userServices.login(info);
+        setUser(userLogin);
+        localStorage.setItem("user-token", userLogin.token);
+        return userLogin;
 
       default:
         break;
