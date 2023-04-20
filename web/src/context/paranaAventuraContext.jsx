@@ -10,9 +10,7 @@ export const ParanaAventuraProvider = ({ children }) => {
   const handleUserContext = async (action, user, id) => {
     switch (action) {
       case "REGISTER":
-        const resRegister = await userServices.register(user);
-        setUser(resRegister);
-        return resRegister;
+        return await userServices.register(user);
 
       case "LOGIN":
         const userLogin = await userServices.login(user);
@@ -21,9 +19,7 @@ export const ParanaAventuraProvider = ({ children }) => {
         return userLogin;
 
       case "DETAIL":
-        const userDetail = await userServices.detail(user);
-        setUser(userDetail);
-        return userDetail;
+        return await userServices.detail(user);
 
       case "UPLOAD":
         const userUpload = await userServices.upload(user, id);

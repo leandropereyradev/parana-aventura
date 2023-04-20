@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const EditUserForm = () => {
-  const { action, payload } = useParanaAventuraContext();
+  const { action } = useParanaAventuraContext();
   const navegate = useNavigate();
+  const location = useLocation();
   const {
     register,
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm({ mode: "onBlur", defaultValues: payload.user });
+  } = useForm({ mode: "onBlur", defaultValues: location?.state });
   const [serverError, setServerError] = useState();
   const [changePass, setChangePass] = useState(false);
 
@@ -28,11 +29,12 @@ const EditUserForm = () => {
       user = await action.handleUserContext(
         "UPLOAD",
         formData,
-        payload.user.id
+        location?.state.id
       );
 
-      navegate(`/user/${payload.user.id}`);
+      navegate(`/user/${location?.state?.id}`);
     } catch (error) {
+      console.log(error);
       const errorErrors = error.response?.data?.errors;
       const errorMessage = error.response?.data?.message;
 
@@ -125,10 +127,10 @@ const EditUserForm = () => {
         </div>
         {serverError && <div>{serverError}</div>}
         <div>
-          <button type="submit">Actualizar</button>
+          <button>Actualizar</button>
         </div>
       </form>
-      <button onClick={() => navegate(`/user/${payload.user.id}`)}>
+      <button onClick={() => navegate(`/user/${location?.state.user.id}`)}>
         Volver
       </button>
     </>
