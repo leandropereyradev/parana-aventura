@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import userServices from "../services/user";
 import fishingZoneServices from "../services/fishing-zone";
+import lodgingServices from "../services/lodging";
 
 export const ParanaAventuraContext = createContext();
 
@@ -44,11 +45,28 @@ export const ParanaAventuraProvider = ({ children }) => {
     }
   };
 
+  const handleLodgingContext = async (action, id) => {
+    switch (action) {
+      case "DETAIL":
+        return await lodgingServices.detail(id);
+
+      case "LIST":
+        return await lodgingServices.list();
+
+      default:
+        break;
+    }
+  };
+
   return (
     <ParanaAventuraContext.Provider
       value={{
         payload: { user },
-        action: { handleUserContext, handleFishingZoneContext },
+        action: {
+          handleUserContext,
+          handleFishingZoneContext,
+          handleLodgingContext,
+        },
       }}
     >
       {children}

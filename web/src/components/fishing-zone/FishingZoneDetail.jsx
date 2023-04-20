@@ -39,6 +39,9 @@ const FishingZoneDetail = () => {
                 {lodging.services.map((service, i) => (
                   <p key={i}>{service}</p>
                 ))}
+                <button onClick={() => navegate(`/lodgings/${lodging.id}`)}>
+                  Ver hospedaje
+                </button>
               </div>
             ))}
           </div>
