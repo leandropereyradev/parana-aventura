@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const LodgingDetail = () => {
   const [lodging, setLodging] = useState();
@@ -10,6 +10,7 @@ const LodgingDetail = () => {
   const { id } = useParams();
 
   const navegate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     async function detailLodging() {
@@ -66,8 +67,8 @@ const LodgingDetail = () => {
       ) : (
         <></>
       )}
-      <button onClick={() => navegate("/fishing-zones")}>
-        Volver a Zonas de Pesca
+      <button onClick={() => navegate(location.state.previousPath)}>
+        Volver a {location.state.title}
       </button>
     </>
   );
