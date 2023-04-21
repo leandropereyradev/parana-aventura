@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
 import { useNavigate, useParams } from "react-router-dom";
+import dayjs from "dayjs";
 
 const FishingZoneDetail = () => {
   const [fishingZone, setFishingZone] = useState([]);
+
   const { action } = useParanaAventuraContext();
   const { id } = useParams();
   const navegate = useNavigate();
@@ -12,6 +14,12 @@ const FishingZoneDetail = () => {
     async function detailFishingZone() {
       try {
         const payload = await action.handleFishingZoneContext("DETAIL", id);
+
+        for (const comments of payload.commentFishingZones) {
+          const user = await action.handleUserContext("DETAIL", comments.user);
+          comments.user = user;
+        }
+
         setFishingZone(payload);
       } catch (error) {
         console.error(error);
@@ -55,6 +63,18 @@ const FishingZoneDetail = () => {
                 <button onClick={() => navegate(`/fishes/${fish.id}`)}>
                   Ver pez
                 </button>
+              </div>
+            ))}
+          </div>
+          <div>
+            <h1>Comentarios</h1>
+            {fishingZone.commentFishingZones?.map((comment) => (
+              <div key={comment.id}>
+                <h1>{comment.comment}</h1>
+                <h2>{comment.user.name}</h2>
+                <p>
+                  {dayjs(comment.createdAt).format("D [de] MMMM [del] YYYY")}
+                </p>
               </div>
             ))}
           </div>

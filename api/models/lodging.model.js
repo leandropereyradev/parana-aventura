@@ -37,5 +37,12 @@ const lodgingSchema = new Schema(
   }
 );
 
+lodgingSchema.virtual("commentsLodging", {
+  ref: "commentLodging",
+  localField: "_id",
+  foreignField: "lodging",
+  justOne: false,
+});
+
 const Lodging = mongoose.model("Lodging", lodgingSchema);
 module.exports = Lodging;
