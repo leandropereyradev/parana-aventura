@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FishingZoneDetail = () => {
   const [fishingZone, setFishingZone] = useState([]);
   const { action } = useParanaAventuraContext();
   const { id } = useParams();
   const navegate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     async function detailFishingZone() {
@@ -40,16 +39,7 @@ const FishingZoneDetail = () => {
                 {lodging.services?.map((service, i) => (
                   <p key={i}>{service}</p>
                 ))}
-                <button
-                  onClick={() =>
-                    navegate(`/lodgings/${lodging.id}`, {
-                      state: {
-                        previousPath: location.pathname,
-                        title: "Zona de pesca",
-                      },
-                    })
-                  }
-                >
+                <button onClick={() => navegate(`/lodgings/${lodging.id}`)}>
                   Ver hospedaje
                 </button>
               </div>
@@ -62,6 +52,9 @@ const FishingZoneDetail = () => {
               <div key={fish.id}>
                 <img src={fish.image} alt={fish.name} />
                 <h1>{fish.name}</h1>
+                <button onClick={() => navegate(`/fishes/${fish.id}`)}>
+                  Ver pez
+                </button>
               </div>
             ))}
           </div>
@@ -69,9 +62,6 @@ const FishingZoneDetail = () => {
       ) : (
         <div>Loading...</div>
       )}
-      <button onClick={() => navegate(location.state.previousPath)}>
-        Volver a {location.state.title}
-      </button>
     </>
   );
 };

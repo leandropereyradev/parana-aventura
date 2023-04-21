@@ -8,6 +8,7 @@ import FishingZoneDetailPage from "./pages/FishingZoneDetailPage";
 import LodgingDetailPage from "./pages/LodgingDetailPage";
 import LodgingListPage from "./pages/LodgingListPage";
 import FishListPage from "./pages/FishListPage";
+import FishesDetailPage from "./pages/FishesDetailPage";
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/lodgings" element={<LodgingListPage />} />
         <Route path="/lodgings/:id" element={<LodgingDetailPage />} />
         <Route path="/fishes" element={<FishListPage />} />
+        <Route path="/fishes/:id" element={<FishesDetailPage />} />
       </Routes>
     </div>
   );

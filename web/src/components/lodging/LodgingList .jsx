@@ -33,16 +33,7 @@ const LodgingList = () => {
               <p key={i}>{service}</p>
             ))}
 
-            <button
-              onClick={() =>
-                navegate(`/lodgings/${lodging.id}`, {
-                  state: {
-                    previousPath: location.pathname,
-                    title: "Hospedajes",
-                  },
-                })
-              }
-            >
+            <button onClick={() => navegate(`/lodgings/${lodging.id}`)}>
               Ver Hospedaje
             </button>
           </div>

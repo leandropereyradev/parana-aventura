@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const FishingZoneList = () => {
   const [fishingZones, setFishingZones] = useState();
   const { action } = useParanaAventuraContext();
 
   const navegate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     async function listFishingZones() {
@@ -44,16 +43,7 @@ const FishingZoneList = () => {
                   {lodging.services?.map((service, i) => (
                     <p key={i}>{service}</p>
                   ))}
-                  <button
-                    onClick={() =>
-                      navegate(`/lodgings/${lodging.id}`, {
-                        state: {
-                          previousPath: location.pathname,
-                          title: "Zonas de pesca",
-                        },
-                      })
-                    }
-                  >
+                  <button onClick={() => navegate(`/lodgings/${lodging.id}`)}>
                     Ver hospedaje
                   </button>
                 </div>

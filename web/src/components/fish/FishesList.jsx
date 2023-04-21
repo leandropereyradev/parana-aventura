@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const FishesList = () => {
   const [fishes, setFishes] = useState();
   const { action } = useParanaAventuraContext();
 
   const navegate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     async function listFishes() {
@@ -60,16 +59,7 @@ const FishesList = () => {
             <h1>{fish.name}</h1>
             <img src={fish.image} alt={fish.name} />
             <p>{fish.description.substring(0, 220) + "..."}</p>
-            <button
-              onClick={() =>
-                navegate(`/fishes/${fish.id}`, {
-                  state: {
-                    previousPath: location.pathname,
-                    title: "Peces",
-                  },
-                })
-              }
-            >
+            <button onClick={() => navegate(`/fishes/${fish.id}`)}>
               Ver Pez
             </button>
 
@@ -79,16 +69,7 @@ const FishesList = () => {
                 <div key={zone.id}>
                   <img src={zone.image} alt={zone.name} />
                   <h1>{zone.name}</h1>
-                  <button
-                    onClick={() =>
-                      navegate(`/fishing-zones/${zone.id}`, {
-                        state: {
-                          previousPath: location.pathname,
-                          title: "Peces",
-                        },
-                      })
-                    }
-                  >
+                  <button onClick={() => navegate(`/fishing-zones/${zone.id}`)}>
                     Ver Zona de pesca
                   </button>
                 </div>
