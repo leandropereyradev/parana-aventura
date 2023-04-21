@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 import userServices from "../services/user";
 import fishingZoneServices from "../services/fishing-zone";
 import lodgingServices from "../services/lodging";
+import fishServices from "../services/fish";
 
 export const ParanaAventuraContext = createContext();
 
@@ -58,6 +59,19 @@ export const ParanaAventuraProvider = ({ children }) => {
     }
   };
 
+  const handleFishContext = async (action, id) => {
+    switch (action) {
+      case "DETAIL":
+        return await fishServices.detail(id);
+
+      case "LIST":
+        return await fishServices.list();
+
+      default:
+        break;
+    }
+  };
+
   return (
     <ParanaAventuraContext.Provider
       value={{
@@ -66,6 +80,7 @@ export const ParanaAventuraProvider = ({ children }) => {
           handleUserContext,
           handleFishingZoneContext,
           handleLodgingContext,
+          handleFishContext,
         },
       }}
     >

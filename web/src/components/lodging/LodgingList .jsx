@@ -25,11 +25,11 @@ const LodgingList = () => {
         lodgings?.map((lodging) => (
           <div key={lodging.id}>
             <h1>{lodging.name}</h1>
-            {lodging.image.map((image, i) => (
+            {lodging.image?.map((image, i) => (
               <img key={i} src={image} alt={lodging.name} />
             ))}
 
-            {lodging.services.map((service, i) => (
+            {lodging.services?.map((service, i) => (
               <p key={i}>{service}</p>
             ))}
 

@@ -7,6 +7,7 @@ import FishingZoneListPage from "./pages/FishingZoneListPage";
 import FishingZoneDetailPage from "./pages/FishingZoneDetailPage";
 import LodgingDetailPage from "./pages/LodgingDetailPage";
 import LodgingListPage from "./pages/LodgingListPage";
+import FishListPage from "./pages/FishListPage";
 import "./App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/fishing-zones/:id" element={<FishingZoneDetailPage />} />
         <Route path="/lodgings" element={<LodgingListPage />} />
         <Route path="/lodgings/:id" element={<LodgingDetailPage />} />
+        <Route path="/fishes" element={<FishListPage />} />
       </Routes>
     </div>
   );

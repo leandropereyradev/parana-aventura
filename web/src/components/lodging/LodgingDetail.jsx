@@ -41,11 +41,11 @@ const LodgingDetail = () => {
       {lodging !== undefined ? (
         <div>
           <h1>{lodging.name}</h1>
-          {lodging.image.map((image, i) => (
+          {lodging.image?.map((image, i) => (
             <img key={i} src={image} alt={lodging.name} />
           ))}
           <p>{lodging.description}</p>
-          {lodging.services.map((service, i) => (
+          {lodging.services?.map((service, i) => (
             <p key={i}>{service}</p>
           ))}
           <p>{lodging.price} € / noche</p>
@@ -55,7 +55,7 @@ const LodgingDetail = () => {
       )}
       <h1>Zonas de pesca</h1>
       {fishingZones ? (
-        fishingZones.map((zone) => (
+        fishingZones?.map((zone) => (
           <div key={zone.id}>
             <h1>{zone.name}</h1>
             <img src={zone.image} alt={zone.name} />

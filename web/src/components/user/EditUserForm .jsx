@@ -130,7 +130,7 @@ const EditUserForm = () => {
           <button>Actualizar</button>
         </div>
       </form>
-      <button onClick={() => navegate(`/user/${location?.state.user.id}`)}>
+      <button onClick={() => navegate(`/user/${location?.state.id}`)}>
         Volver
       </button>
     </>

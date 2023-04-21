@@ -37,11 +37,11 @@ const FishingZoneList = () => {
 
             <div>
               <h1>Hospedajes</h1>
-              {fishingZone.lodgings.map((lodging) => (
+              {fishingZone.lodgings?.map((lodging) => (
                 <div key={lodging.id}>
                   <img src={lodging.image[0]} alt={lodging.name} />
                   <h1>{lodging.name}</h1>
-                  {lodging.services.map((service, i) => (
+                  {lodging.services?.map((service, i) => (
                     <p key={i}>{service}</p>
                   ))}
                   <button
