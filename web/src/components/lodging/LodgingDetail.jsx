@@ -34,7 +34,7 @@ const LodgingDetail = () => {
           });
         }
         payload.fishingZone = fishingZones;
-        console.log(payload);
+
         setLodging(payload);
       } catch (error) {
         console.error(error);

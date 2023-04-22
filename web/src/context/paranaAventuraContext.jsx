@@ -28,6 +28,10 @@ export const ParanaAventuraProvider = ({ children }) => {
         setUser(userUpload);
         return userUpload;
 
+      case "LOGOUT":
+        localStorage.removeItem("user-token");
+        setUser();
+
       default:
         break;
     }
