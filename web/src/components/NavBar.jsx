@@ -19,7 +19,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="nav-bar">
+      <nav className="nav-bar z-10">
         <div className="nav-bar-container">
           <NavLink to={"/"} className="w-12">
             <img
@@ -139,24 +139,28 @@ const NavBar = () => {
                   Peces
                 </NavLink>
               </li>
-              <li className="w-full">
-                <NavLink
-                  to={"/register"}
-                  onClick={() => setMenu(!menu)}
-                  className={isActiveLink}
-                >
-                  Regístrate
-                </NavLink>
-              </li>
-              <li className="w-full">
-                <NavLink
-                  to={"/login"}
-                  onClick={() => setMenu(!menu)}
-                  className={isActiveLink}
-                >
-                  Iniciar Sesión
-                </NavLink>
-              </li>
+              {payload.user?.email === undefined && (
+                <>
+                  <li className="w-full">
+                    <NavLink
+                      to={"/register"}
+                      onClick={() => setMenu(!menu)}
+                      className={isActiveLink}
+                    >
+                      Regístrate
+                    </NavLink>
+                  </li>
+                  <li className="w-full">
+                    <NavLink
+                      to={"/login"}
+                      onClick={() => setMenu(!menu)}
+                      className={isActiveLink}
+                    >
+                      Iniciar Sesión
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

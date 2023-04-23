@@ -7,6 +7,14 @@ module.exports = withMT({
       screens: {
         fullHD: { raw: "(min-width: 1900px)" },
       },
+      backgroundImage: {
+        registerSM:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682203709/parana-aventura/registerSM_tlv1cg.jpg')",
+        registerMD:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682203709/parana-aventura/registerMD_zzkpef.jpg')",
+        registerXL:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682203709/parana-aventura/registerXL_eh4elo.jpg')",
+      },
     },
     colors: {
       transparent: "transparent",
