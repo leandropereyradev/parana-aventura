@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EditUserForm = () => {
-  const { action } = useParanaAventuraContext();
+  const { action, payload } = useParanaAventuraContext();
   const navegate = useNavigate();
-  const location = useLocation();
   const {
     register,
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm({ mode: "onBlur", defaultValues: location?.state });
+  } = useForm({ mode: "onBlur", defaultValues: payload?.user });
   const [serverError, setServerError] = useState();
   const [changePass, setChangePass] = useState(false);
 
@@ -29,10 +28,10 @@ const EditUserForm = () => {
       user = await action.handleUserContext(
         "UPLOAD",
         formData,
-        location?.state.id
+        payload?.user?.id
       );
 
-      navegate(`/user/${location?.state?.id}`);
+      navegate("/me");
     } catch (error) {
       console.log(error);
       const errorErrors = error.response?.data?.errors;
@@ -130,9 +129,6 @@ const EditUserForm = () => {
           <button>Actualizar</button>
         </div>
       </form>
-      <button onClick={() => navegate(`/user/${location?.state.id}`)}>
-        Volver
-      </button>
     </>
   );
 };

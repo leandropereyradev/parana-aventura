@@ -57,18 +57,10 @@ const NavBar = () => {
                   <ul className="py-2" aria-labelledby="user-menu-button">
                     <li onClick={() => menuUser && setMenuUser(!menuUser)}>
                       <NavLink
-                        to={`/user/${payload.user?.id}`}
+                        to="/me"
                         className="nav-bar-profile-menu-navlinks"
                       >
                         Perfil de usuario
-                      </NavLink>
-                    </li>
-                    <li onClick={() => menuUser && setMenuUser(!menuUser)}>
-                      <NavLink
-                        to={`/user/edit`}
-                        className="nav-bar-profile-menu-navlinks"
-                      >
-                        Editar usuario
                       </NavLink>
                     </li>
                     <li onClick={handleLogout}>

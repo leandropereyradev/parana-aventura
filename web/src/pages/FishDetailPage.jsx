@@ -1,6 +1,6 @@
 import FishesDetail from "../components/fish/FishesDetail";
 
-const FishesDetailPage = () => {
+const FishDetailPage = () => {
   return (
     <div>
       <FishesDetail />
@@ -8,4 +8,4 @@ const FishesDetailPage = () => {
   );
 };
 
-export default FishesDetailPage;
+export default FishDetailPage;

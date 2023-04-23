@@ -1,4 +1,24 @@
 @tailwind base;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #556b2f;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #556b2f;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #333027;
+  border-radius: 14px;
+  border: 2px solid #556b2f;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -37,7 +57,7 @@
   }
 
   .nav-bar-menu-list {
-    @apply flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-azulProfundo md:flex-row md:space-x-8 md:mt-0 md:border-0 xl:text-xl fullHD:text-2xl fullHD:gap-8;
+    @apply flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-azulProfundo md:flex-row md:space-x-8 md:mt-0 md:border-0 md:text-xl fullHD:text-2xl fullHD:gap-8;
   }
 
   .nav-bar-menu-navlink {
@@ -78,7 +98,7 @@
     @apply text-red-500 font-semibold -mb-4 lg:text-sm fullHD:text-xl;
   }
 
-  /* Register Page */
+  /* Forms Page */
 
   .form-page-container {
     @apply bg-right-bottom bg-cover bg-fixed h-screen;
@@ -102,5 +122,27 @@
 
   .form-page-text-p {
     @apply text-gray-50 md:text-2xl md:text-center lg:text-lg fullHD:text-2xl;
+  }
+
+  /* User Page */
+
+  .user-page-container {
+    @apply bg-userSM h-screen bg-fixed;
+  }
+
+  .user-page-blur {
+    @apply backdrop-blur bg-black/30 h-full;
+  }
+
+  .user-page-section-container {
+    @apply pt-20 pb-2 mx-1 p-2 flex flex-col h-full text-gray-50 md:p-5 md:pt-20 md:pb-5 xl:max-w-5xl xl:mx-auto;
+  }
+
+  .user-page-section-h1 {
+    @apply text-center text-xl mb-5 md:text-3xl md:mb-10;
+  }
+
+  .user-page-section-page {
+    @apply bg-azulProfundo/60 p-2 rounded-b-lg flex flex-col h-full overflow-y-scroll md:p-10 lg:overflow-y-hidden fullHD:gap-y-12;
   }
 }

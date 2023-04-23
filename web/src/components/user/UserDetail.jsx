@@ -1,47 +1,60 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useNavigate, useParams } from "react-router-dom";
 
 const UserDetail = () => {
   const [user, setUser] = useState();
-  const { action } = useParanaAventuraContext();
-  const { id } = useParams();
-  const navegate = useNavigate();
+  const { action, payload } = useParanaAventuraContext();
 
   useEffect(() => {
     async function userDetail() {
       try {
-        const payload = await action.handleUserContext("DETAIL", id);
-        setUser(payload);
+        const payloadUser = await action.handleUserContext(
+          "DETAIL",
+          payload?.user?.id
+        );
+        setUser(payloadUser);
       } catch (error) {
         console.error(error);
       }
     }
     userDetail();
-  }, [id]);
+  }, [payload]);
 
   return (
     <>
-      <div>
-        <h1>Hola, {user?.name}!</h1>
-        <div>
-          <h2>Información general</h2>
-          <img src={user?.image} alt={user?.name} />
-          <p>
-            Nombre: {user?.name} {user?.lastname}
-          </p>
-          <p>Correo Electrónico: {user?.email}</p>
-          <p>
-            Teléfono:{" "}
-            {user?.telephone.toLocaleString("es-SP").replace(/\./g, " ")}
-          </p>
-          <button onClick={() => navegate("/user/edit", { state: user })}>
-            Editar Perfil
-          </button>
+      <p className="mt-3 mb-8 md:text-xl lg:mb-20">
+        Aquí podrás encontrar tu información general. Recuerda mantenerla
+        actualizada para que seas el primero en recibir las grandes ofertas que
+        tenemos para ti.
+      </p>
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-0 lg:justify-around xl:items-center">
+        <div className="flex flex-col gap-10">
+          <div>
+            <span className="font-semibold mr-2 md:text-xl">Nombre:</span>
+            <p className="ml-6 md:text-xl">
+              {user?.name} {user?.lastname}
+            </p>
+          </div>
+          <div>
+            <span className="font-semibold mr-2 md:text-xl">
+              Correo Electrónico:
+            </span>
+            <p className="ml-6 md:text-xl">{user?.email}</p>
+          </div>
+          <div>
+            <span className="font-semibold mr-2 md:text-xl">Teléfono:</span>
+            <p className="ml-6 md:text-xl">
+              {user?.telephone.toLocaleString("es-SP").replace(/\./g, " ")}
+            </p>
+          </div>
         </div>
-      </div>
-      <div>
-        <h2>Reservas</h2>
+        <div className="flex justify-center">
+          <img
+            src={user?.image}
+            alt={user?.name}
+            className="rounded-xl md:w-72"
+          />
+        </div>
       </div>
     </>
   );
