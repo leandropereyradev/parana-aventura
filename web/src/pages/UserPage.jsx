@@ -55,13 +55,17 @@ const UserPage = () => {
               Actualizar
             </button>
           </div>
-          {userDetail.booking && <></>}
+          {userDetail.booking && <div className="user-page-section-page"></div>}
           {userDetail.detail && (
             <div className="user-page-section-page">
               <UserDetail />
             </div>
           )}
-          {userDetail.edit && <EditUserForm />}
+          {userDetail.edit && (
+            <div className="bg-azulProfundo/60 p-2 rounded-b-lg flex flex-col md:justify-center md:items-center h-full md:p-10 fullHD:gap-y-12">
+              <EditUserForm />
+            </div>
+          )}
         </div>
       </div>
     </div>

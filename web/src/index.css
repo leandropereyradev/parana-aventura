@@ -127,7 +127,7 @@
   /* User Page */
 
   .user-page-container {
-    @apply bg-userSM h-screen bg-fixed;
+    @apply bg-userSM md:bg-userMD lg:bg-userXL h-screen bg-fixed;
   }
 
   .user-page-blur {
