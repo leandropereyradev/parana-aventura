@@ -38,45 +38,55 @@ const LoginForm = () => {
   };
 
   return (
-    <>
+    <div className="fullHD:w-[60%]">
       <form onSubmit={handleSubmit(onLoginUser)}>
-        <div>
-          <div>
-            <input
-              type="email"
-              placeholder="Correo electrónico"
-              {...register("email", {
-                required: "El Correo electrónico es requerido",
-                pattern: {
-                  value: /^\S+@\S+\.\S+$/,
-                  message: "El correo electrónico debe ser válido",
-                },
-              })}
-            />
-            {errors.email && <div>{errors.email?.message}</div>}
-          </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Contraseña"
-              {...register("password", {
-                required: "El contraseña es requerida",
-                minLength: {
-                  value: 8,
-                  message:
-                    "La contraseña debe tener, como mínimo, 8 caracteres",
-                },
-              })}
-            />
-            {errors.password && <div>{errors.password?.message}</div>}
-          </div>
+        <div className="form-container-inputs group">
+          <input
+            type="email"
+            className="form-input peer"
+            placeholder=" "
+            {...register("email", {
+              required: "El Correo electrónico es requerido",
+              pattern: {
+                value: /^\S+@\S+\.\S+$/,
+                message: "El correo electrónico debe ser válido",
+              },
+            })}
+          />
+          <label htmlFor="email" className="form-label origin-[0]">
+            Correo Electrónico
+          </label>
+          {errors.email && (
+            <div className="form-error">{errors.email?.message}</div>
+          )}
         </div>
-        {serverError && <div>{serverError}</div>}
-        <div>
-          <button type="submit">Iniciar Sesión</button>
+        <div className="form-container-inputs group">
+          <input
+            type="password"
+            className="form-input peer"
+            placeholder=" "
+            {...register("password", {
+              required: "El contraseña es requerida",
+              minLength: {
+                value: 8,
+                message: "La contraseña debe tener, como mínimo, 8 caracteres",
+              },
+            })}
+          />
+          <label htmlFor="password" className="form-label origin-[0]">
+            Contraseña
+          </label>
+          {errors.password && (
+            <div className="form-error">{errors.password?.message}</div>
+          )}
         </div>
+
+        <button type="submit" className="form-btn">
+          Iniciar Sesión
+        </button>
       </form>
-    </>
+      {serverError && <div className="form-error">{serverError}</div>}
+    </div>
   );
 };
 

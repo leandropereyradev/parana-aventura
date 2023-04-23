@@ -14,6 +14,12 @@ module.exports = withMT({
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682203709/parana-aventura/registerMD_zzkpef.jpg')",
         registerXL:
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682203709/parana-aventura/registerXL_eh4elo.jpg')",
+        loginSM:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682243503/parana-aventura/loginSM_ojrwml.jpg')",
+        loginMD:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682243503/parana-aventura/loginMD_izevyv.jpg')",
+        loginXL:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682243946/parana-aventura/loginXL_ga1jsk.jpg')",
       },
     },
     colors: {

@@ -46,43 +46,43 @@ const RegisterForm = () => {
   return (
     <div className="fullHD:w-[60%]">
       <form onSubmit={handleSubmit(onUserSubmit)}>
-        <div className="register-container-inputs group">
+        <div className="form-container-inputs group">
           <input
             type="text"
             {...register("name", {
               required: "El nombre es requerido",
             })}
             name="name"
-            className="register-input peer"
+            className="form-input peer"
             placeholder=" "
           />
-          <label htmlFor="name" className="register-label origin-[0]">
+          <label htmlFor="name" className="form-label origin-[0]">
             Nombre
           </label>
           {errors.name && (
-            <div className="register-error">{errors.name?.message}</div>
+            <div className="form-error">{errors.name?.message}</div>
           )}
         </div>
-        <div className="register-container-inputs group">
+        <div className="form-container-inputs group">
           <input
             type="text"
             {...register("lastname", {
               required: "El apellido es requerido",
             })}
             name="lastname"
-            className="register-input peer"
+            className="form-input peer"
             placeholder=" "
           />
-          <label htmlFor="lastname" className="register-label origin-[0]">
+          <label htmlFor="lastname" className="form-label origin-[0]">
             Apellido
           </label>
           {errors.lastname && (
-            <div className="register-error">{errors.lastname?.message}</div>
+            <div className="form-error">{errors.lastname?.message}</div>
           )}
         </div>
-        <div className="register-container-inputs group">
+        <div className="form-container-inputs group">
           <input
-            className="register-input peer"
+            className="form-input peer"
             type="number"
             placeholder=" "
             {...register("telephone", {
@@ -97,14 +97,14 @@ const RegisterForm = () => {
               },
             })}
           />
-          <label htmlFor="number" className="register-label origin-[0]">
+          <label htmlFor="number" className="form-label origin-[0]">
             Teléfono
           </label>
           {errors.telephone && (
-            <div className="register-error">{errors.telephone?.message}</div>
+            <div className="form-error">{errors.telephone?.message}</div>
           )}
         </div>
-        <div className="register-container-inputs group">
+        <div className="form-container-inputs group">
           <input
             type="email"
             {...register("email", {
@@ -116,17 +116,17 @@ const RegisterForm = () => {
             })}
             name="email"
             id="email"
-            className="register-input peer"
+            className="form-input peer"
             placeholder=" "
           />
-          <label htmlFor="email" className="register-label origin-[0]">
+          <label htmlFor="email" className="form-label origin-[0]">
             Correo Electrónico
           </label>
           {errors.email && (
-            <div className="register-error">{errors.email?.message}</div>
+            <div className="form-error">{errors.email?.message}</div>
           )}
         </div>
-        <div className="register-container-inputs group">
+        <div className="form-container-inputs group">
           <input
             type="password"
             {...register("password", {
@@ -137,18 +137,18 @@ const RegisterForm = () => {
               },
             })}
             name="password"
-            className="register-input peer"
+            className="form-input peer"
             placeholder=" "
           />
-          <label htmlFor="password" className="register-label origin-[0]">
+          <label htmlFor="password" className="form-label origin-[0]">
             Contraseña
           </label>
           {errors.password && (
-            <div className="register-error">{errors.password?.message}</div>
+            <div className="form-error">{errors.password?.message}</div>
           )}
         </div>
-        <div className="register-container-inputs group">
-          <label htmlFor="file" className="register-label-file">
+        <div className="form-container-inputs group">
+          <label htmlFor="file" className="form-label-file">
             Fotografía
           </label>
           <input
@@ -158,18 +158,18 @@ const RegisterForm = () => {
             {...register("file", {
               required: "Tu fotografía es requerida",
             })}
-            className="register-container-inputs-file"
+            className="form-container-inputs-file"
           />
           {errors.file && (
-            <div className="register-error">{errors.file?.message}</div>
+            <div className="form-error">{errors.file?.message}</div>
           )}
         </div>
 
-        <button type="submit" className="register-btn">
+        <button type="submit" className="form-btn">
           Regístrame
         </button>
       </form>
-      {serverError && <div className="register-error">{serverError}</div>}
+      {serverError && <div className="form-error">{serverError}</div>}
     </div>
   );
 };

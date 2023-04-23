@@ -50,57 +50,57 @@
 
   /* Register Form */
 
-  .register-container-inputs {
+  .form-container-inputs {
     @apply relative z-0 w-full mb-6 lg:mb-2;
   }
 
-  .register-label {
+  .form-label {
     @apply peer-focus:font-medium absolute text-sm text-gray-50 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 peer-focus:left-0 peer-focus:text-gray-50 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 md:text-lg lg:text-sm fullHD:text-xl;
   }
 
-  .register-input {
+  .form-input {
     @apply block py-2.5 px-0 w-full text-sm text-gray-50 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-50 fullHD:text-lg;
   }
 
-  .register-container-inputs-file {
+  .form-container-inputs-file {
     @apply block w-full mb-5 text-xs text-gray-50 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 md:text-lg lg:mb-0;
   }
 
-  .register-label-file {
+  .form-label-file {
     @apply block text-sm font-medium text-gray-50 mb-2 md:text-lg lg:text-sm fullHD:mt-5;
   }
 
-  .register-btn {
+  .form-btn {
     @apply text-white bg-oliva hover:bg-esmeralda focus:ring-4 focus:outline-none focus:ring-esmeralda font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center md:text-xl lg:mt-10;
   }
 
-  .register-error {
+  .form-error {
     @apply text-red-500 font-semibold -mb-4 lg:text-sm fullHD:text-xl;
   }
 
   /* Register Page */
 
-  .register-page-container {
-    @apply bg-registerSM bg-right-bottom bg-cover bg-fixed h-screen md:bg-registerMD lg:bg-registerXL;
+  .form-page-container {
+    @apply bg-right-bottom bg-cover bg-fixed h-screen;
   }
 
-  .register-page-blur {
+  .form-page-blur {
     @apply backdrop-blur bg-black/10 h-screen;
   }
 
-  .register-page-form-container {
+  .form-page-form-container {
     @apply w-10/12 h-screen m-auto pt-20 flex flex-col gap-12 md:items-center md:justify-center md:pt-0 md:w-3/4 md:gap-20 lg:w-2/4 lg:gap-10 fullHD:gap-20;
   }
 
-  .register-page-text-container {
+  .form-page-text-container {
     @apply flex flex-col gap-6 md:gap-16 lg:gap-6;
   }
 
-  .register-page-text-h3 {
+  .form-page-text-h3 {
     @apply text-center font-bold text-xl text-gray-50 md:text-3xl lg:text-2xl xl:text-3xl xl:mt-8 fullHD:text-5xl fullHD:mb-10;
   }
 
-  .register-page-text-p {
+  .form-page-text-p {
     @apply text-gray-50 md:text-2xl md:text-center lg:text-lg fullHD:text-2xl;
   }
 }
