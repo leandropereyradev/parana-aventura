@@ -38,7 +38,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="fullHD:w-[60%]">
+    <div className="lg:w-[80%] fullHD:w-[60%]">
       <form onSubmit={handleSubmit(onLoginUser)}>
         <div className="form-container-inputs group">
           <input

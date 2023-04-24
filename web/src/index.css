@@ -1,22 +1,11 @@
 @tailwind base;
 
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #556b2f;
+  scrollbar-width: 0;
 }
 
 *::-webkit-scrollbar {
-  width: 10px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #556b2f;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #333027;
-  border-radius: 14px;
-  border: 2px solid #556b2f;
+  width: 0px;
 }
 
 @tailwind components;
@@ -25,7 +14,11 @@
 @layer components {
   /* NavBar */
   .nav-bar {
-    @apply bg-azulProfundo border-gray-200 fixed w-full;
+    @apply border-gray-200 fixed w-full z-10 transition-all duration-500 md:w-11/12 md:mx-auto md:inset-x-0 md:mt-5 md:rounded-lg xl:w-10/12;
+  }
+
+  .nav-bar-bg {
+    @apply bg-azulProfundo md:shadow-lg md:shadow-azulProfundo/80;
   }
 
   .nav-bar-container {
@@ -57,18 +50,18 @@
   }
 
   .nav-bar-menu-list {
-    @apply flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-azulProfundo md:flex-row md:space-x-8 md:mt-0 md:border-0 md:text-xl fullHD:text-2xl fullHD:gap-8;
+    @apply flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-azulProfundo md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0 md:text-xl fullHD:text-2xl fullHD:gap-8;
   }
 
   .nav-bar-menu-navlink {
-    @apply flex justify-center py-2 pl-3 pr-4 text-gray-50 rounded hover:bg-gray-100 hover:text-esmeralda hover:font-semibold mb-1 md:w-max md:mb-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-50 md:hover:font-normal;
+    @apply flex justify-center tracking-widest py-2 pl-3 pr-4 text-gray-50 rounded hover:bg-gray-100 hover:text-esmeralda hover:font-semibold mb-1 md:w-max md:mb-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-50 md:hover:font-normal;
   }
 
   .nav-bar-menu-navlink-active {
     @apply text-esmeralda font-semibold bg-white md:px-2 md:py-1 md:hover:bg-gray-100 md:hover:text-esmeralda md:hover:font-semibold;
   }
 
-  /* Register Form */
+  /* Register and Login Form */
 
   .form-container-inputs {
     @apply relative z-0 w-full mb-6 lg:mb-2;
@@ -144,5 +137,67 @@
 
   .user-page-section-page {
     @apply bg-azulProfundo/60 p-2 rounded-b-lg flex flex-col h-full overflow-y-scroll md:p-10 lg:overflow-y-hidden fullHD:gap-y-12;
+  }
+
+  /* FishingZone Page */
+
+  .fishing-container {
+    @apply h-screen bg-left-bottom bg-cover bg-registerSM shadow-azulProfundo/80 md:bg-registerMD lg:bg-registerXL;
+  }
+
+  .fishing-text-container {
+    @apply h-screen bg-black/40 flex flex-col justify-center items-center lg:flex-row lg:gap-10;
+  }
+
+  .fishing-page-container {
+    @apply w-11/12 mx-auto pt-24 text-gray-800 xl:max-w-5xl;
+  }
+
+  .fishing-page-h1 {
+    @apply uppercase tracking-widest text-gray-50 font-medium text-6xl mb-8 md:text-8xl lg:text-6xl xl:text-7xl fullHD:text-8xl;
+  }
+
+  .fishing-section-container {
+    @apply flex flex-col gap-5 mb-10 bg-beige py-4 px-2 rounded-xl md:p-10;
+  }
+
+  .fishing-section-h1 {
+    @apply mb-5 text-center text-xl text-oliva font-semibold md:text-3xl;
+  }
+
+  .fishing-section-data-container {
+    @apply flex flex-col gap-5 lg:grid lg:grid-cols-2;
+  }
+
+  .fishing-section-data-text-container {
+    @apply lg:flex lg:flex-col lg:justify-between;
+  }
+
+  .fishing-section-data-text-p {
+    @apply text-justify mb-8 md:text-2xl;
+  }
+
+  .fishing-section-data-text-btn {
+    @apply text-white uppercase tracking-widest text-xl font-semibold bg-oliva hover:bg-esmeralda focus:ring-4 focus:outline-none focus:ring-esmeralda rounded-lg w-full px-5 py-2.5 text-center md:text-3xl lg:mt-10 lg:text-2xl;
+  }
+
+  .fishing-section-lodging-container {
+    @apply bg-oliva text-gray-50 py-4 px-4 mb-2 rounded-lg flex flex-col items-center gap-4 md:p-10 lg:p-5;
+  }
+
+  .fishing-section-lodging-h1 {
+    @apply text-2xl md:text-4xl lg:text-2xl;
+  }
+
+  .fishing-section-lodging-services-container {
+    @apply flex justify-around w-full;
+  }
+
+  .fishing-section-lodging-services-p {
+    @apply italic text-xl md:text-3xl md:my-5 lg:text-lg;
+  }
+
+  .fishing-section-lodging-services-btn {
+    @apply bg-beige focus:outline-none font-semibold rounded-lg text-xl text-oliva w-full px-5 py-2.5 text-center md:text-3xl uppercase tracking-widest lg:text-lg;
   }
 }

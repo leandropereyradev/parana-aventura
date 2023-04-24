@@ -24,26 +24,52 @@ const FishingZoneList = () => {
     <>
       {fishingZones !== undefined ? (
         fishingZones?.map((fishingZone) => (
-          <div key={fishingZone.id}>
-            <h1>{fishingZone.name}</h1>
-            <img src={fishingZone.image} alt={fishingZone.name} />
-            <p>{fishingZone.description.substring(0, 220) + "..."}</p>
-            <button
-              onClick={() => navegate(`/fishing-zones/${fishingZone.id}`)}
-            >
-              Ver zona
-            </button>
+          <div key={fishingZone.id} className="mb-10">
+            <div className="fishing-section-container">
+              <h1 className="fishing-section-h1">{fishingZone.name}</h1>
+              <div className="fishing-section-data-container">
+                <img
+                  src={fishingZone.image}
+                  alt={fishingZone.name}
+                  className="w-full"
+                />
+                <div className="fishing-section-data-text-container">
+                  <p className="fishing-section-data-text-p">
+                    {fishingZone.description.substring(0, 220) + "..."}
+                  </p>
+                  <button
+                    className="fishing-section-data-text-btn"
+                    onClick={() => navegate(`/fishing-zones/${fishingZone.id}`)}
+                  >
+                    Ver zona
+                  </button>
+                </div>
+              </div>
+            </div>
 
-            <div>
-              <h1>Hospedajes</h1>
+            <div className="lg:grid lg:grid-cols-3 lg:gap-4">
               {fishingZone.lodgings?.map((lodging) => (
-                <div key={lodging.id}>
-                  <img src={lodging.image[0]} alt={lodging.name} />
-                  <h1>{lodging.name}</h1>
-                  {lodging.services?.map((service, i) => (
-                    <p key={i}>{service}</p>
-                  ))}
-                  <button onClick={() => navegate(`/lodgings/${lodging.id}`)}>
+                <div
+                  key={lodging.id}
+                  className="fishing-section-lodging-container"
+                >
+                  <img
+                    src={lodging.image[0]}
+                    alt={lodging.name}
+                    className="w-full"
+                  />
+                  <h1 className="fishing-section-lodging-h1">{lodging.name}</h1>
+                  <div className="fishing-section-lodging-services-container">
+                    {lodging.services?.map((service, i) => (
+                      <p key={i} className="fishing-section-lodging-services-p">
+                        {service}
+                      </p>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => navegate(`/lodgings/${lodging.id}`)}
+                    className="fishing-section-lodging-services-btn"
+                  >
                     Ver hospedaje
                   </button>
                 </div>
