@@ -6,6 +6,8 @@ const fishingZoneSchema = new Schema(
     name: String,
     description: String,
     image: String,
+    article_a: String,
+    article_b: String,
     status: {
       type: Boolean,
       default: false,

@@ -3,6 +3,8 @@ import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
 import { useNavigate } from "react-router-dom";
 
 const FishingZoneList = () => {
+  window.scrollTo(0, 0);
+
   const [fishingZones, setFishingZones] = useState();
   const { action } = useParanaAventuraContext();
 

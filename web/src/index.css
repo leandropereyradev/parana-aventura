@@ -200,4 +200,168 @@
   .fishing-section-lodging-services-btn {
     @apply bg-beige focus:outline-none font-semibold rounded-lg text-xl text-oliva w-full px-5 py-2.5 text-center md:text-3xl uppercase tracking-widest lg:text-lg;
   }
+
+  /* FishingZone Detail Page */
+
+  .zone-container {
+    @apply h-screen bg-left-bottom bg-cover bg-userSM shadow-azulProfundo/80 md:bg-userMD lg:bg-userXL;
+  }
+
+  .zone-title-container {
+    @apply h-screen bg-black/40 flex flex-col justify-center items-center gap-20 md:gap-32 lg:gap-16;
+  }
+
+  .zone-title-h1 {
+    @apply text-gray-50 uppercase tracking-widest text-2xl md:text-3xl;
+  }
+
+  .zone-subtitle-container {
+    @apply flex flex-col justify-center items-center lg:flex-row lg:gap-10;
+  }
+
+  .zone-subtitle-h1 {
+    @apply uppercase tracking-widest text-gray-50 font-medium text-4xl mb-8 md:text-7xl lg:text-5xl xl:text-6xl fullHD:text-7xl;
+  }
+
+  .zone-page-container {
+    @apply w-11/12 mx-auto pt-24 text-gray-800;
+  }
+
+  .zone-detail-zone-container {
+    @apply w-11/12 mx-auto flex flex-col items-center gap-12 mb-16 fullHD:max-w-7xl fullHD:mb-32;
+  }
+
+  .zone-detail-zone-image {
+    @apply w-full rounded-lg shadow-lg shadow-oliva/80 lg:max-w-xl;
+  }
+
+  .zone-detail-zone-p {
+    @apply text-justify md:text-lg fullHD:text-xl;
+  }
+
+  .zone-detail-article-container {
+    @apply text-justify w-11/12 mx-auto flex flex-col items-center gap-12 mb-16 fullHD:max-w-7xl fullHD:mb-32;
+  }
+
+  .zone-detail-article-p {
+    @apply text-justify md:text-lg fullHD:text-xl;
+  }
+
+  .zone-detail-fishes-container {
+    @apply mb-16 fullHD:mb-32;
+  }
+
+  .zone-detail-fishes-h1 {
+    @apply uppercase italic font-bold text-2xl text-center tracking-widest mb-8 md:text-3xl fullHD:text-4xl fullHD:mb-24;
+  }
+
+  .zone-detail-fishes-detail-container {
+    @apply md:grid md:grid-cols-2 md:gap-x-5 lg:grid-cols-4;
+  }
+
+  .zone-detail-comment-container {
+    @apply md:max-w-3xl md:mx-auto;
+  }
+
+  .zone-detail-comment-h1 {
+    @apply uppercase italic font-bold text-2xl text-center tracking-widest mb-8 md:text-3xl fullHD:text-4xl fullHD:mb-20;
+  }
+
+  /* Lodging Card*/
+
+  .lodging-container {
+    @apply mb-16 lg:grid lg:grid-cols-3 lg:gap-x-4 fullHD:mb-32 fullHD:gap-x-24;
+  }
+
+  .lodging-card-container {
+    @apply flex gap-5 bg-oliva text-gray-50 mb-4 rounded-lg shadow-lg shadow-oliva/80 md:mb-6 lg:gap-0 lg:flex-col lg:h-auto fullHD:pb-6;
+  }
+
+  .lodging-card-image {
+    @apply w-1/2 rounded-l-lg object-cover lg:w-full lg:rounded-none lg:rounded-t-lg;
+  }
+
+  .lodging-card-image {
+    @apply w-1/2 rounded-l-lg object-cover lg:w-full lg:rounded-none lg:rounded-t-lg;
+  }
+
+  .lodging-card-detail-container {
+    @apply w-1/2 flex flex-col justify-around gap-3 lg:w-full lg:gap-8;
+  }
+
+  .lodging-card-detail-h1-container {
+    @apply bg-beige;
+  }
+
+  .lodging-card-detail-h1 {
+    @apply text-center text-oliva uppercase font-bold tracking-widest md:py-2 md:text-2xl fullHD:text-3xl;
+  }
+
+  .lodging-card-detail-image-container {
+    @apply flex flex-row justify-around;
+  }
+
+  .lodging-card-detail-image-container-container {
+    @apply md:py-5 lg:py-0;
+  }
+
+  .lodging-card-detail-image {
+    @apply w-8 md:w-12 lg:w-8 fullHD:w-12;
+  }
+
+  .lodging-card-btn-container {
+    @apply mx-auto;
+  }
+
+  .lodging-card-btn {
+    @apply bg-beige font-bold rounded-lg text-oliva px-6 py-2.5 text-sm tracking-wider text-center uppercase md:text-xl lg:mb-4;
+  }
+
+  /* Fish Card */
+
+  .fish-card-container {
+    @apply bg-oliva/90 mb-8 text-gray-50 flex flex-col justify-around gap-6 rounded-lg shadow-lg shadow-oliva xl:w-64 xl:mx-auto;
+  }
+
+  .fish-card-image {
+    @apply w-full rounded-t-lg;
+  }
+
+  .fish-card-h1 {
+    @apply text-center uppercase text-3xl font-bold tracking-widest lg:text-2xl;
+  }
+
+  .fish-card-btn-container {
+    @apply mx-auto;
+  }
+
+  .fish-card-btn {
+    @apply bg-beige font-bold rounded-lg text-oliva px-6 py-2.5 text-2xl mb-3 tracking-wider text-center uppercase;
+  }
+
+  /* Comment Card */
+
+  .comment-card-container {
+    @apply bg-azulProfundo rounded-lg p-2 text-gray-50 mb-6 shadow-lg shadow-azulProfundo/80 md:p-4;
+  }
+
+  .comment-card-user_info-container {
+    @apply flex justify-between items-center;
+  }
+
+  .comment-card-user-container {
+    @apply flex gap-5 items-center;
+  }
+
+  .comment-card-user-image {
+    @apply w-10 rounded-full;
+  }
+
+  .comment-card-p {
+    @apply my-7;
+  }
+
+  .comment-card-icons-container {
+    @apply flex gap-5 justify-end;
+  }
 }
