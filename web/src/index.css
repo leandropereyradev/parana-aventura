@@ -150,7 +150,7 @@
   }
 
   .fishing-page-container {
-    @apply w-11/12 mx-auto pt-24 text-gray-800 xl:max-w-5xl;
+    @apply pt-24 text-gray-800;
   }
 
   .fishing-page-h1 {
@@ -158,27 +158,31 @@
   }
 
   .fishing-section-container {
-    @apply flex flex-col gap-5 mb-10 bg-beige py-4 px-2 rounded-xl md:p-10;
+    @apply flex flex-col mb-10 bg-beige rounded-xl shadow-lg shadow-marron/80 md:max-w-xl md:mx-auto lg:flex-row lg:gap-5 lg:max-w-full;
+  }
+
+  .fishing-section-image {
+    @apply w-full rounded-t-lg lg:rounded-none lg:rounded-l-lg lg:max-w-md;
   }
 
   .fishing-section-h1 {
-    @apply mb-5 text-center text-xl text-oliva font-semibold md:text-3xl;
+    @apply text-center text-lg py-2 text-beige bg-oliva font-semibold md:text-3xl lg:text-2xl;
   }
 
   .fishing-section-data-container {
-    @apply flex flex-col gap-5 lg:grid lg:grid-cols-2;
+    @apply flex flex-col gap-5 lg:justify-around;
   }
 
   .fishing-section-data-text-container {
-    @apply lg:flex lg:flex-col lg:justify-between;
+    @apply px-6 lg:flex lg:flex-col lg:justify-between;
   }
 
   .fishing-section-data-text-p {
-    @apply text-justify mb-8 md:text-2xl;
+    @apply text-justify mb-8 md:text-xl;
   }
 
   .fishing-section-data-text-btn {
-    @apply text-white uppercase tracking-widest text-xl font-semibold bg-oliva hover:bg-esmeralda focus:ring-4 focus:outline-none focus:ring-esmeralda rounded-lg w-full px-5 py-2.5 text-center md:text-3xl lg:mt-10 lg:text-2xl;
+    @apply text-white uppercase tracking-widest text-xl font-semibold mb-4 bg-oliva rounded-lg px-10 py-2.5 text-center mx-auto md:mb-8 md:text-2xl lg:mb-0 lg:text-2xl;
   }
 
   .fishing-section-lodging-container {
@@ -314,7 +318,7 @@
   }
 
   .lodging-card-btn {
-    @apply bg-beige font-bold rounded-lg text-oliva px-6 py-2.5 text-sm tracking-wider text-center uppercase md:text-xl lg:mb-4;
+    @apply bg-beige font-bold rounded-lg text-oliva px-6 py-1 text-sm tracking-wider text-center uppercase md:py-2 md:text-xl lg:mb-4;
   }
 
   /* Fish Card */
