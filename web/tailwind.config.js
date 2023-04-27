@@ -26,6 +26,12 @@ module.exports = withMT({
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682251058/parana-aventura/userMD_kk9rqw.jpg')",
         userXL:
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682251058/parana-aventura/userXL_gaagly.jpg')",
+        fishSM:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682520476/parana-aventura/fishSM_ix9kd8.jpg')",
+        fishMD:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682520476/parana-aventura/fishMD_vzy1nw.jpg')",
+        fishXL:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682520476/parana-aventura/fishXL_phsuf5.jpg')",
       },
     },
     colors: {

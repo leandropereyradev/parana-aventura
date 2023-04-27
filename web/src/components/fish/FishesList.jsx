@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useNavigate } from "react-router-dom";
+import LodgingCard from "../cards/LodgingCard";
+import FishCardXL from "../cards/FishCardXL";
+import ZoneCardXL from "../cards/ZoneCardXL";
 
 const FishesList = () => {
+  window.scrollTo(0, 0);
+
   const [fishes, setFishes] = useState();
   const { action } = useParanaAventuraContext();
-
-  const navegate = useNavigate();
 
   useEffect(() => {
     async function listFishes() {
@@ -33,12 +35,10 @@ const FishesList = () => {
           const updatedFishingZone = [];
           for (const zoneId of fish.fishingZone) {
             const zone = zones.find((zone) => zone.id === zoneId);
-            updatedFishingZone.push({
-              id: zone.id,
-              image: zone.image,
-              name: zone.name,
-            });
+
+            updatedFishingZone.push(zone);
           }
+
           fish.fishingZone = updatedFishingZone;
         }
 
@@ -55,25 +55,27 @@ const FishesList = () => {
     <>
       {fishes !== undefined ? (
         fishes?.map((fish) => (
-          <div key={fish.id}>
-            <h1>{fish.name}</h1>
-            <img src={fish.image} alt={fish.name} />
-            <p>{fish.description.substring(0, 220) + "..."}</p>
-            <button onClick={() => navegate(`/fishes/${fish.id}`)}>
-              Ver Pez
-            </button>
-
+          <div key={fish.id} className="fish-list-container">
             <div>
-              <h1>Zonas de pesca</h1>
-              {fish.fishingZone?.map((zone) => (
-                <div key={zone.id}>
-                  <img src={zone.image} alt={zone.name} />
-                  <h1>{zone.name}</h1>
-                  <button onClick={() => navegate(`/fishing-zones/${zone.id}`)}>
-                    Ver Zona de pesca
-                  </button>
-                </div>
-              ))}
+              <FishCardXL {...fish} />
+
+              <div className="fish-list-zone-container">
+                {fish.fishingZone?.map((zone) => (
+                  <ZoneCardXL key={zone.id} {...zone} />
+                ))}
+              </div>
+            </div>
+
+            <div className="fish-list-lodging-section">
+              <h2 className="fish-list-lodging-h2">Hospedajes de la zona</h2>
+
+              <div className="fish-list-lodging-container">
+                {fish.fishingZone?.map((zone) => {
+                  return zone.lodgings.map((lodging) => (
+                    <LodgingCard key={lodging.id} {...lodging} />
+                  ));
+                })}
+              </div>
             </div>
           </div>
         ))

@@ -271,6 +271,80 @@
     @apply uppercase italic font-bold text-2xl text-center tracking-widest mb-8 md:text-3xl fullHD:text-4xl fullHD:mb-20;
   }
 
+  /* Fish List Page */
+
+  .fish-container {
+    @apply h-screen bg-left-bottom bg-cover bg-fishSM shadow-azulProfundo/80 md:bg-fishMD lg:bg-fishXL;
+  }
+
+  .fish-text-container {
+    @apply h-screen bg-black/40 flex flex-col justify-center items-center lg:flex-row lg:gap-10;
+  }
+
+  .fish-page-h1 {
+    @apply uppercase tracking-widest text-gray-50 font-medium text-6xl mb-8 md:text-8xl lg:text-6xl xl:text-7xl fullHD:text-8xl;
+  }
+
+  .fish-page-container {
+    @apply pt-24 text-gray-800;
+  }
+
+  .fish-list-container {
+    @apply bg-beige w-11/12 mx-auto rounded-lg mb-16 shadow-lg shadow-azulProfundo/80 md:pb-6 md:mb-24 lg:w-full lg:bg-inherit lg:shadow-none;
+  }
+
+  .fish-list-zone-container {
+    @apply p-2 md:mb-8;
+  }
+
+  .fish-list-lodging-section {
+    @apply hidden md:block lg:bg-beige lg:pt-16 lg:pb-12;
+  }
+
+  .fish-list-lodging-h2 {
+    @apply md:uppercase md:text-center md:font-bold md:text-3xl md:mb-6 lg:text-4xl lg:mb-12 lg:text-oliva;
+  }
+
+  .fish-list-lodging-container {
+    @apply w-11/12 mx-auto lg:grid lg:grid-cols-3 md:gap-x-6;
+  }
+
+  /* *********************** Cards *********************** */
+
+  /* ZoneXL Card*/
+
+  .zoneXL-container {
+    @apply flex flex-col bg-azulProfundo text-gray-50 mb-4 rounded-lg shadow-lg shadow-azulProfundo/80 md:mb-6 md:flex-row lg:gap-6 lg:max-w-3xl lg:mx-auto lg:mb-20 lg:h-72 xl:max-w-5xl fullHD:pb-6;
+  }
+
+  .zoneXL-image {
+    @apply w-full rounded-t-lg md:w-auto md:max-w-sm md:rounded-none md:rounded-l-lg lg:h-72;
+  }
+
+  .zoneXL-detail-container {
+    @apply flex flex-col justify-around items-center lg:w-full;
+  }
+
+  .zoneXL-text-container {
+    @apply lg:w-full;
+  }
+
+  .zoneXL-text-h2 {
+    @apply italic text-center mb-6 hidden md:block md:mt-2;
+  }
+
+  .zoneXL-text-h1 {
+    @apply text-center text-lg font-semibold uppercase mb-4 bg-celeste md:text-xl xl:py-2;
+  }
+
+  .zoneXL-text-p {
+    @apply px-4 mb-4 text-justify;
+  }
+
+  .zoneXL-text-btn {
+    @apply bg-celeste font-bold rounded-lg text-gray-50 px-4 py-2 text-xl mb-6 tracking-wider text-center uppercase m-auto md:text-2xl md:py-2 md:px-6 lg:py-0 xl:py-2;
+  }
+
   /* Lodging Card*/
 
   .lodging-container {
@@ -278,7 +352,7 @@
   }
 
   .lodging-card-container {
-    @apply flex gap-5 bg-oliva text-gray-50 mb-4 rounded-lg shadow-lg shadow-oliva/80 md:mb-6 lg:gap-0 lg:flex-col lg:h-auto fullHD:pb-6;
+    @apply flex gap-5 bg-oliva text-gray-50 mb-4 rounded-lg shadow-lg shadow-oliva/80 md:mb-6 lg:gap-0 lg:flex-col lg:h-auto xl:max-w-md xl:mx-auto;
   }
 
   .lodging-card-image {
@@ -290,7 +364,7 @@
   }
 
   .lodging-card-detail-container {
-    @apply w-1/2 flex flex-col justify-around gap-3 lg:w-full lg:gap-8;
+    @apply w-1/2 flex flex-col justify-around gap-3 md:py-4 lg:py-0 lg:w-full lg:gap-4;
   }
 
   .lodging-card-detail-h1-container {
@@ -341,6 +415,36 @@
 
   .fish-card-btn {
     @apply bg-beige font-bold rounded-lg text-oliva px-6 py-2.5 text-2xl mb-3 tracking-wider text-center uppercase;
+  }
+
+  /* FishXL Card*/
+
+  .fishXL-container {
+    @apply flex flex-col mb-10 lg:grid lg:grid-cols-2 lg:gap-6 lg:w-11/12 lg:mx-auto lg:bg-azulProfundo/40 lg:rounded-lg lg:shadow-lg lg:shadow-azulProfundo/80 xl:max-w-6xl;
+  }
+
+  .fishXL-image {
+    @apply w-full rounded-t-lg lg:rounded-none lg:rounded-l-lg;
+  }
+
+  .fishXL-text-container {
+    @apply flex flex-col gap-4 lg:justify-around lg:pt-6 xl:w-full;
+  }
+
+  .fishXL-text-h1 {
+    @apply uppercase text-center font-bold text-3xl bg-azulProfundo py-2 text-gray-50 tracking-widest xl:w-full;
+  }
+
+  .fishXL-text-p {
+    @apply text-justify px-6 md:text-2xl md:mb-6 lg:text-lg lg:text-gray-50;
+  }
+
+  .fishXL-btn-container {
+    @apply flex w-full;
+  }
+
+  .fishXL-btn {
+    @apply bg-azulProfundo font-bold rounded-lg text-gray-50 px-6 py-2.5 text-2xl tracking-wider text-center uppercase mx-auto md:mb-6;
   }
 
   /* Comment Card */
