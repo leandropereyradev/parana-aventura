@@ -6,6 +6,8 @@ const fishSchema = new Schema(
     name: String,
     description: String,
     image: String,
+    fishing_tips: Array,
+    fishing: String,
     fishingZone: [
       {
         type: mongoose.Schema.Types.ObjectId,

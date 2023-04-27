@@ -309,6 +309,76 @@
     @apply w-11/12 mx-auto lg:grid lg:grid-cols-3 md:gap-x-6;
   }
 
+  /* Fish Detail Page */
+
+  .fish-detail-container {
+    @apply h-screen bg-left-bottom bg-cover bg-fishDetailSM shadow-azulProfundo/80 md:bg-fishDetailMD lg:bg-fishDetailXL;
+  }
+
+  .fish-detail-blur-container {
+    @apply h-screen bg-black/50 flex flex-col justify-center items-center;
+  }
+
+  .fish-detail-title-container {
+    @apply flex justify-center items-center;
+  }
+
+  .fish-detail-title-h1 {
+    @apply uppercase text-center tracking-widest text-gray-50 font-medium text-5xl mb-8 md:text-7xl xl:text-8xl fullHD:text-9xl;
+  }
+
+  .fish-detail-fish-container {
+    @apply pt-24 text-gray-800;
+  }
+
+  .fish-detail-fish-card-container {
+    @apply w-11/12 mx-auto flex flex-col gap-6 mb-12 md:mb-20 md:gap-10 lg:flex-row xl:mb-36 xl:max-w-6xl fullHD:gap-20 fullHD:my-44;
+  }
+
+  .fish-detail-fish-card-image {
+    @apply rounded-lg w-auto shadow-lg shadow-azulProfundo/80 lg:w-1/2;
+  }
+
+  .fish-detail-fish-card-p {
+    @apply text-justify md:text-2xl lg:text-base xl:text-xl xl:leading-relaxed fullHD:leading-9;
+  }
+
+  .fish-detail-fish-lodging-container {
+    @apply w-11/12 mx-auto mb-12 md:mb-20 lg:bg-beige lg:w-full xl:mb-36 lg:py-16 fullHD:py-24 fullHD:mb-36;
+  }
+
+  .fish-detail-fish-lodging-h1 {
+    @apply text-center uppercase text-2xl font-bold mb-6 md:text-3xl md:mb-12 xl:text-4xl xl:mb-20 fullHD:text-5xl fullHD:mb-32;
+  }
+
+  .fish-detail-fish-lodging-card-container {
+    @apply lg:grid lg:grid-cols-3 lg:gap-x-4 lg:max-w-4xl lg:mx-auto xl:max-w-6xl fullHD:max-w-full fullHD:gap-y-12;
+  }
+
+  .fish-detail-fish-tips-container {
+    @apply w-11/12 mx-auto text-justify mb-16 md:mb-20 lg:max-w-4xl lg:mx-auto xl:mb-36 fullHD:max-w-7xl;
+  }
+
+  .fish-detail-fish-tips-h1 {
+    @apply uppercase italic font-bold text-2xl text-center tracking-widest mb-8 md:text-3xl md:mb-12 xl:text-4xl xl:mb-20 fullHD:text-5xl;
+  }
+
+  .fish-detail-fish-tips-p {
+    @apply mb-8 md:text-lg xl:text-2xl xl:leading-relaxed fullHD:leading-10;
+  }
+
+  .fish-detail-fish-tips-span {
+    @apply font-bold text-lg md:text-xl xl:text-2xl fullHD:text-2xl;
+  }
+
+  .fish-detail-fish-zones-container {
+    @apply w-11/12 mx-auto md:mb-20;
+  }
+
+  .fish-detail-fish-zones-h1 {
+    @apply uppercase italic font-bold text-2xl text-center tracking-widest mb-8 md:text-3xl md:mb-12 fullHD:text-5xl fullHD:mb-16;
+  }
+
   /* *********************** Cards *********************** */
 
   /* ZoneXL Card*/
@@ -330,7 +400,7 @@
   }
 
   .zoneXL-text-h2 {
-    @apply italic text-center mb-6 hidden md:block md:mt-2;
+    @apply italic text-center mb-6 hidden md:block md:mt-2 fullHD:mt-10;
   }
 
   .zoneXL-text-h1 {
