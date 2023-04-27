@@ -14,7 +14,7 @@
 @layer components {
   /* NavBar */
   .nav-bar {
-    @apply border-gray-200 fixed w-full z-10 transition-all duration-500 md:w-11/12 md:mx-auto md:inset-x-0 md:mt-5 md:rounded-lg xl:w-10/12;
+    @apply border-gray-200 fixed w-full z-10 transition-all duration-500 md:w-11/12 md:mx-auto md:inset-x-0 md:mt-5 md:rounded-lg;
   }
 
   .nav-bar-bg {
@@ -25,40 +25,60 @@
     @apply flex flex-wrap items-center justify-between mx-auto px-4 py-2;
   }
 
+  .nav-bar-link-image {
+    @apply w-12 lg:w-14;
+  }
+
   .nav-bar-profile-container {
     @apply flex items-center md:order-2;
   }
 
   .nav-bar-profile-button {
-    @apply flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300;
+    @apply flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0;
+  }
+
+  .nav-bar-profile-button-image {
+    @apply w-10 h-10 rounded-full md:w-12 md:h-12;
   }
 
   .nav-bar-profile-menu-container {
-    @apply bg-azulProfundo z-50 absolute top-12 right-2 w-44 my-4 text-base text-center list-none divide-y divide-gray-100 rounded-lg shadow;
+    @apply bg-azulProfundo z-50 absolute text-lg tracking-widest top-12 right-20 my-4 text-center list-none divide-y divide-gray-50 rounded-lg shadow md:right-16 md:top-16 md:text-2xl lg:right-0;
+  }
+
+  .nav-bar-profile-name-container {
+    @apply px-4 py-3 bg-gray-50 rounded-t-lg;
+  }
+
+  .nav-bar-profile-menu-name {
+    @apply block font-bold text-esmeralda bg-gray-50;
   }
 
   .nav-bar-profile-menu-navlinks {
-    @apply block px-4 py-2 text-sm text-gray-50 hover:bg-gray-100 hover:text-esmeralda hover:font-bold;
+    @apply block px-4 py-2 text-gray-50 hover:bg-gray-100 hover:text-esmeralda;
   }
 
   .nav-bar-menu-button {
-    @apply inline-flex items-center p-2 ml-1 text-sm text-gray-50 rounded-lg md:hidden;
+    @apply inline-flex items-center p-2 ml-20 text-sm text-gray-50 rounded-lg lg:hidden;
+  }
+
+  .nav-bar-menu-button-svg {
+    @apply w-10 h-10 md:w-12 md:h-12;
   }
 
   .nav-bar-menu-container {
-    @apply absolute top-12 right-auto items-center justify-between w-11/12 md:static md:w-auto md:order-1;
+    @apply absolute top-12 right-auto items-center justify-between w-11/12 md:top-16 lg:static lg:w-auto lg:order-1;
   }
 
   .nav-bar-menu-list {
-    @apply flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-azulProfundo md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0 md:text-xl fullHD:text-2xl fullHD:gap-8;
+    @apply flex flex-col items-center font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-azulProfundo md:text-2xl lg:bg-transparent lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:text-xl xl:text-2xl fullHD:text-2xl fullHD:gap-8;
   }
 
   .nav-bar-menu-navlink {
-    @apply flex justify-center tracking-widest py-2 pl-3 pr-4 text-gray-50 rounded hover:bg-gray-100 hover:text-esmeralda hover:font-semibold mb-1 md:w-max md:mb-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-50 md:hover:font-normal;
+    @apply flex justify-center tracking-widest py-2 pl-3 pr-4 text-gray-50 rounded mb-1 lg:rounded-none lg:w-max lg:mb-0 lg:p-0 hover:bg-gray-100 hover:text-esmeralda;
   }
 
   .nav-bar-menu-navlink-active {
-    @apply text-esmeralda font-semibold bg-white md:px-2 md:py-1 md:hover:bg-gray-100 md:hover:text-esmeralda md:hover:font-semibold;
+    @apply text-esmeralda font-semibold bg-white lg:px-2 lg:py-1 lg:bg-inherit lg:text-gray-50 lg:border-b-2;
   }
 
   /* Register and Login Form */
@@ -142,7 +162,7 @@
   /* FishingZone Page */
 
   .fishing-container {
-    @apply h-screen bg-left-bottom bg-cover bg-registerSM shadow-azulProfundo/80 md:bg-registerMD lg:bg-registerXL;
+    @apply h-screen bg-left-bottom bg-cover bg-registerSM md:bg-registerMD lg:bg-registerXL;
   }
 
   .fishing-text-container {
@@ -158,7 +178,7 @@
   }
 
   .fishing-section-container {
-    @apply flex flex-col mb-10 bg-beige rounded-xl shadow-lg shadow-marron/80 md:max-w-xl md:mx-auto lg:flex-row lg:gap-5 lg:max-w-full;
+    @apply flex flex-col mb-10 bg-beige rounded-xl md:max-w-xl md:mx-auto lg:flex-row lg:gap-5 lg:max-w-full;
   }
 
   .fishing-section-image {
@@ -208,7 +228,7 @@
   /* FishingZone Detail Page */
 
   .zone-container {
-    @apply h-screen bg-left-bottom bg-cover bg-userSM shadow-azulProfundo/80 md:bg-userMD lg:bg-userXL;
+    @apply h-screen bg-left-bottom bg-cover bg-userSM md:bg-userMD lg:bg-userXL;
   }
 
   .zone-title-container {
@@ -236,7 +256,7 @@
   }
 
   .zone-detail-zone-image {
-    @apply w-full rounded-lg shadow-lg shadow-oliva/80 lg:max-w-xl;
+    @apply w-full rounded-lg lg:max-w-xl;
   }
 
   .zone-detail-zone-p {
@@ -274,7 +294,7 @@
   /* Fish List Page */
 
   .fish-container {
-    @apply h-screen bg-left-bottom bg-cover bg-fishSM shadow-azulProfundo/80 md:bg-fishMD lg:bg-fishXL;
+    @apply h-screen bg-left-bottom bg-cover bg-fishSM md:bg-fishMD lg:bg-fishXL;
   }
 
   .fish-text-container {
@@ -290,7 +310,7 @@
   }
 
   .fish-list-container {
-    @apply bg-beige w-11/12 mx-auto rounded-lg mb-16 shadow-lg shadow-azulProfundo/80 md:pb-6 md:mb-24 lg:w-full lg:bg-inherit lg:shadow-none;
+    @apply bg-beige w-11/12 mx-auto rounded-lg mb-16 md:pb-6 md:mb-24 lg:w-full lg:bg-inherit lg:shadow-none;
   }
 
   .fish-list-zone-container {
@@ -312,7 +332,7 @@
   /* Fish Detail Page */
 
   .fish-detail-container {
-    @apply h-screen bg-left-bottom bg-cover bg-fishDetailSM shadow-azulProfundo/80 md:bg-fishDetailMD lg:bg-fishDetailXL;
+    @apply h-screen bg-left-bottom bg-cover bg-fishDetailSM md:bg-fishDetailMD lg:bg-fishDetailXL;
   }
 
   .fish-detail-blur-container {
@@ -336,7 +356,7 @@
   }
 
   .fish-detail-fish-card-image {
-    @apply rounded-lg w-auto shadow-lg shadow-azulProfundo/80 lg:w-1/2;
+    @apply rounded-lg w-auto lg:w-1/2;
   }
 
   .fish-detail-fish-card-p {
@@ -384,7 +404,7 @@
   /* ZoneXL Card*/
 
   .zoneXL-container {
-    @apply flex flex-col bg-azulProfundo text-gray-50 mb-4 rounded-lg shadow-lg shadow-azulProfundo/80 md:mb-6 md:flex-row lg:gap-6 lg:max-w-3xl lg:mx-auto lg:mb-20 lg:h-72 xl:max-w-5xl fullHD:pb-6;
+    @apply flex flex-col bg-azulProfundo text-gray-50 mb-4 rounded-lg md:mb-6 md:flex-row lg:gap-6 lg:max-w-3xl lg:mx-auto lg:mb-20 lg:h-72 xl:max-w-5xl fullHD:pb-6;
   }
 
   .zoneXL-image {
@@ -422,7 +442,7 @@
   }
 
   .lodging-card-container {
-    @apply flex gap-5 bg-oliva text-gray-50 mb-4 rounded-lg shadow-lg shadow-oliva/80 md:mb-6 lg:gap-0 lg:flex-col lg:h-auto xl:max-w-md xl:mx-auto;
+    @apply flex gap-5 bg-oliva text-gray-50 mb-4 rounded-lg md:mb-6 lg:gap-0 lg:flex-col lg:h-auto xl:max-w-md xl:mx-auto;
   }
 
   .lodging-card-image {
@@ -468,7 +488,7 @@
   /* Fish Card */
 
   .fish-card-container {
-    @apply bg-oliva/90 mb-8 text-gray-50 flex flex-col justify-around gap-6 rounded-lg shadow-lg shadow-oliva xl:w-64 xl:mx-auto;
+    @apply bg-oliva/90 mb-8 text-gray-50 flex flex-col justify-around gap-6 rounded-lg xl:w-64 xl:mx-auto;
   }
 
   .fish-card-image {
@@ -490,7 +510,7 @@
   /* FishXL Card*/
 
   .fishXL-container {
-    @apply flex flex-col mb-10 lg:grid lg:grid-cols-2 lg:gap-6 lg:w-11/12 lg:mx-auto lg:bg-azulProfundo/40 lg:rounded-lg lg:shadow-lg lg:shadow-azulProfundo/80 xl:max-w-6xl;
+    @apply flex flex-col mb-10 lg:grid lg:grid-cols-2 lg:gap-6 lg:w-11/12 lg:mx-auto lg:bg-azulProfundo/40 lg:rounded-lg xl:max-w-6xl;
   }
 
   .fishXL-image {
@@ -520,7 +540,7 @@
   /* Comment Card */
 
   .comment-card-container {
-    @apply bg-azulProfundo rounded-lg p-2 text-gray-50 mb-6 shadow-lg shadow-azulProfundo/80 md:p-4;
+    @apply bg-azulProfundo rounded-lg p-2 text-gray-50 mb-6 md:p-4;
   }
 
   .comment-card-user_info-container {

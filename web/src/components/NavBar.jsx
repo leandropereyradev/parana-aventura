@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <nav className={scrollPosition < 90 ? "nav-bar" : "nav-bar nav-bar-bg"}>
       <div className="nav-bar-container">
-        <NavLink to={"/"} className="w-12">
+        <NavLink to={"/"} className="nav-bar-link-image">
           <img
             src="https://res.cloudinary.com/dbr9eypvg/image/upload/v1682091202/parana-aventura/logo-light_nvcoal.svg"
             alt="Paraná Aventura"
@@ -41,7 +41,7 @@ const NavBar = () => {
                 className="nav-bar-profile-button"
               >
                 <img
-                  className="w-8 h-8 rounded-full"
+                  className="nav-bar-profile-button-image"
                   src={payload.user?.image}
                   alt="user photo"
                 />
@@ -51,8 +51,8 @@ const NavBar = () => {
                   menuUser ? "block" : "hidden"
                 } nav-bar-profile-menu-container`}
               >
-                <div className="px-4 py-3">
-                  <span className="block text-sm text-gray-50">
+                <div className="nav-bar-profile-name-container">
+                  <span className="nav-bar-profile-menu-name">
                     {payload.user?.name}
                   </span>
                 </div>
@@ -80,7 +80,7 @@ const NavBar = () => {
             className="nav-bar-menu-button"
           >
             <svg
-              className="w-6 h-6"
+              className="nav-bar-menu-button-svg"
               aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 20 20"
@@ -97,7 +97,7 @@ const NavBar = () => {
         <div
           className={`${
             menu ? "block" : "hidden"
-          } md:flex nav-bar-menu-container`}
+          } lg:flex nav-bar-menu-container`}
         >
           <ul className="nav-bar-menu-list">
             <li className="w-full">
