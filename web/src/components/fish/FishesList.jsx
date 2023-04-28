@@ -5,7 +5,7 @@ import FishCardXL from "../cards/FishCardXL";
 import ZoneCardXL from "../cards/ZoneCardXL";
 
 const FishesList = () => {
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
 
   const [fishes, setFishes] = useState();
   const { action } = useParanaAventuraContext();
@@ -66,7 +66,7 @@ const FishesList = () => {
               </div>
             </div>
 
-            <div className="fish-list-lodging-section">
+            <div className="fish-list-lodging-section shadow-[0px_0px_10px_2px]">
               <h2 className="fish-list-lodging-h2">Hospedajes de la zona</h2>
 
               <div className="fish-list-lodging-container">

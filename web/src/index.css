@@ -74,7 +74,7 @@
   }
 
   .nav-bar-menu-navlink {
-    @apply flex justify-center tracking-widest py-2 pl-3 pr-4 text-gray-50 rounded mb-1 lg:rounded-none lg:w-max lg:mb-0 lg:p-0 hover:bg-gray-100 hover:text-esmeralda;
+    @apply flex justify-center tracking-widest py-2 pl-3 pr-4 text-gray-50 rounded mb-1 lg:rounded-none lg:w-max lg:mb-0 lg:p-0 hover:bg-gray-100 hover:text-esmeralda lg:hover:bg-inherit lg:hover:text-gray-50;
   }
 
   .nav-bar-menu-navlink-active {
@@ -397,6 +397,24 @@
 
   .fish-detail-fish-zones-h1 {
     @apply uppercase italic font-bold text-2xl text-center tracking-widest mb-8 md:text-3xl md:mb-12 fullHD:text-5xl fullHD:mb-16;
+  }
+
+  /* Lodgings Page */
+
+  .lodgings-container {
+    @apply h-screen bg-left-bottom bg-cover bg-lodgingsSM md:bg-lodgingsMD lg:bg-lodgingsXL;
+  }
+
+  .lodgings-title-container {
+    @apply h-screen bg-black/40 flex flex-col justify-center items-center lg:flex-row lg:gap-10;
+  }
+
+  .lodgings-title-h1 {
+    @apply uppercase tracking-widest text-gray-50 font-medium text-4xl mb-8 md:text-7xl lg:text-6xl xl:text-7xl fullHD:text-8xl;
+  }
+
+  .lodgings-section-container {
+    @apply pt-24 text-gray-800;
   }
 
   /* *********************** Cards *********************** */
