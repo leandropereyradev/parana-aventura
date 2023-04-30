@@ -417,6 +417,104 @@
     @apply pt-24 text-gray-800;
   }
 
+  /* Lodging Detail Page */
+
+  .lodging-page-container {
+    @apply h-screen bg-bottom bg-cover bg-lodgingSM md:bg-lodgingMD lg:bg-lodgingXL;
+  }
+
+  .lodging-page-blur {
+    @apply h-screen bg-black/30 flex flex-col justify-center items-center;
+  }
+
+  .lodging-page-title-container {
+    @apply flex justify-center items-center;
+  }
+
+  .lodging-page-title {
+    @apply uppercase text-center tracking-widest text-gray-50 font-medium text-5xl mb-8 md:text-7xl xl:text-8xl fullHD:text-9xl;
+  }
+
+  .lodging-page-detail-container {
+    @apply pt-24 text-gray-800;
+  }
+
+  .lodging-detail-container {
+    @apply mb-12;
+  }
+
+  .lodging-detail-imagescard-container {
+    @apply lg:mb-24;
+  }
+
+  .lodging-detail-images-container {
+    @apply w-11/12 mx-auto mb-6 grid md:grid-cols-3 md:grid-rows-2 gap-3 md:mb-0 xl:w-full xl:max-w-7xl;
+  }
+
+  .lodging-detail-image1-container {
+    @apply md:col-span-2 md:row-span-2;
+  }
+
+  .lodging-detail-image-1 {
+    @apply rounded-lg md:rounded-none md:rounded-tl-lg;
+  }
+
+  .lodging-detail-image2-container {
+    @apply md:row-span-1;
+  }
+
+  .lodging-detail-image-2 {
+    @apply rounded-lg md:rounded-none md:rounded-tr-lg;
+  }
+
+  .lodging-detail-image3-container {
+    @apply md:row-span-2;
+  }
+
+  .lodging-detail-image-3 {
+    @apply rounded-lg md:rounded-none;
+  }
+
+  .lodging-detail-services_price-container {
+    @apply bg-oliva py-6 w-11/12 mb-12 mx-auto grid grid-cols-3 items-center md:rounded-b-lg lg:mb-24 xl:w-full xl:max-w-7xl;
+  }
+
+  .lodging-detail-services-container {
+    @apply col-span-2 flex justify-around;
+  }
+
+  .lodging-detail-services-image {
+    @apply w-8 md:w-14;
+  }
+
+  .lodging-detail-services_price-p {
+    @apply text-gray-50 text-center md:text-4xl;
+  }
+
+  .lodging-detail-services_price-span {
+    @apply font-bold text-4xl md:text-6xl;
+  }
+
+  .lodging-detail-description-container {
+    @apply w-11/12 mx-auto fullHD:w-4/5;
+  }
+
+  .lodging-detail-description-p {
+    @apply text-justify text-xl md:text-2xl lg:text-4xl xl:leading-relaxed;
+  }
+
+  .lodging-detail-lodging-container {
+    @apply w-11/12 mx-auto mb-12 lg:mb-24;
+  }
+
+  .lodging-detail-lodging_comment-h1 {
+    @apply uppercase italic font-bold text-2xl text-center tracking-widest mb-8 md:text-3xl md:mb-12 fullHD:text-5xl fullHD:mb-16;
+  }
+
+  .lodging-detail-comments-container {
+    @apply w-11/12 mx-auto lg:w-2/4;
+  }
+
   /* *********************** Cards *********************** */
 
   /* ZoneXL Card*/
