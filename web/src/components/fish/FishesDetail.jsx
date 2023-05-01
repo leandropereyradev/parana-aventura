@@ -60,7 +60,7 @@ const FishesDetail = ({ setTitle }) => {
           </div>
 
           <div className="fish-detail-fish-tips-container">
-            <h1 className="fish-detail-fish-tips-h1">¡A percar se ha dicho!</h1>
+            <h1 className="fish-detail-fish-tips-h1">¡A pescar se ha dicho!</h1>
             <p className="fish-detail-fish-tips-p">{fish.fishing}</p>
             <div>
               {fish.fishing_tips?.map((tip, i) => (

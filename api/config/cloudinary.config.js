@@ -6,8 +6,8 @@ const maxSize = 2 * 1024 * 1024;
 
 cloudinary.config({
   cloud_name: "dbr9eypvg",
-  api_key: "786718846787114",
-  api_secret: "pgkJ0LKMHdkLtkxpPkRG4x9Iv7M",
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET,
 });
 
 const storageUser = new CloudinaryStorage({
@@ -17,15 +17,7 @@ const storageUser = new CloudinaryStorage({
   },
 });
 
-// const storagePet = new CloudinaryStorage({
-//   cloudinary: cloudinary,
-//   params: {
-//     folder: "tindPetPets",
-//   },
-// });
-
 module.exports.user = multer({
   storage: storageUser,
   limits: { fileSize: maxSize },
 });
-// module.exports.pet = multer({ storage: storagePet });
