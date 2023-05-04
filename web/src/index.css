@@ -627,6 +627,48 @@
     @apply italic tracking-widest md:text-2xl md:leading-relaxed;
   }
 
+  /* Footer */
+
+  .footer-container {
+    @apply h-screen bg-footerSM bg-cover bg-center mt-28 md:bg-footerMD lg:mt-40 fullHD:mt-60;
+  }
+
+  .footer-gradient {
+    @apply h-screen bg-gradient-to-t from-azulProfundo via-transparent;
+  }
+
+  .footer-subcontainer {
+    @apply h-screen w-11/12 mx-auto text-gray-50 flex flex-col justify-between lg:justify-end xl:max-w-7xl;
+  }
+
+  .footer-contact-container {
+    @apply grid grid-rows-footer h-full lg:grid-rows-none lg:grid-cols-footer lg:h-auto lg:mb-4;
+  }
+
+  .footer-image-container {
+    @apply place-self-center lg:place-self-start;
+  }
+
+  .footer-image {
+    @apply w-40 md:w-60 lg:w-32;
+  }
+
+  .footer-contact-section {
+    @apply grid grid-cols-2 md:ml-20 lg:ml-0;
+  }
+
+  .footer-contact-section-p {
+    @apply font-bold text-lg mb-1 md:text-2xl lg:text-base;
+  }
+
+  .footer-contact-section-ul {
+    @apply flex flex-col gap-2 md:text-xl lg:text-base;
+  }
+
+  .footer-credits-container {
+    @apply flex flex-col items-center mb-4 font-bold tracking-widest md:text-xl lg:text-sm;
+  }
+
   /* *********************** Cards *********************** */
 
   /* ZoneXL Card*/

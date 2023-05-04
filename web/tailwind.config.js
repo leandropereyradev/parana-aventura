@@ -9,6 +9,10 @@ module.exports = withMT({
       },
       gridTemplateColumns: {
         "80-20": "80% 20%",
+        footer: "20% 40% 40%",
+      },
+      gridTemplateRows: {
+        footer: "60% 20% 20%",
       },
       backgroundImage: {
         registerSM:
@@ -71,6 +75,12 @@ module.exports = withMT({
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683204782/parana-aventura/background/bannerTurismoMD_eatopb.jpg')",
         bannerTurismoXL:
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683204782/parana-aventura/background/bannerTurismoXL_lmtkft.jpg')",
+        footerSM:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683219812/parana-aventura/background/footerSM_xcbqqd.jpg')",
+        footerMD:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683219812/parana-aventura/background/footerMD_odzfgo.jpg')",
+        footerXL:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683219812/parana-aventura/background/footerXL_ze7x63.jpg')",
       },
     },
     colors: {
