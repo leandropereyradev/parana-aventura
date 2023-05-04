@@ -1,6 +1,8 @@
 import FishingZoneList from "../components/fishing-zone/FishingZoneList";
 
 const FishingZoneListPage = () => {
+  window.scrollTo(0, 0);
+
   return (
     <>
       <div className="fishing-container shadow-[0px_0px_15px_10px]">

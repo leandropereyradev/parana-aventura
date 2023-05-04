@@ -573,6 +573,60 @@
     @apply flex items-center gap-3 text-xl lg:text-lg;
   }
 
+  /* Home Page */
+
+  .home-container {
+    @apply h-screen bg-left-bottom bg-cover bg-homeSM md:bg-homeMD lg:bg-homeXL;
+  }
+
+  .home-title-container {
+    @apply h-screen bg-black/10 flex flex-col justify-center items-center gap-6 md:gap-16;
+  }
+
+  .home-title-subtitle {
+    @apply text-gray-50 uppercase tracking-widest text-xl md:text-3xl lg:text-2xl;
+  }
+
+  .home-title {
+    @apply uppercase leading-relaxed tracking-widest text-center text-gray-50 font-medium text-6xl mb-8 md:text-7xl lg:text-6xl xl:text-7xl fullHD:text-8xl;
+  }
+
+  .home-text-container {
+    @apply w-11/12 mx-auto mt-32 text-gray-800 lg:max-w-5xl;
+  }
+
+  .home-text-h2 {
+    @apply text-2xl text-center tracking-widest font-bold mb-4 xl:text-4xl fullHD:text-5xl fullHD:mb-10;
+  }
+
+  .home-text-p {
+    @apply text-justify leading-relaxed md:text-2xl md:leading-relaxed lg:text-xl lg:leading-relaxed xl:text-2xl xl:leading-relaxed;
+  }
+
+  .home-bannerTurismo-container {
+    @apply bg-bannerTurismoSM bg-center bg-cover md:bg-bannerTurismoMD lg:bg-bannerTurismoXL;
+  }
+
+  .home-bannerZone-container {
+    @apply bg-bannerZoneSM bg-top bg-cover md:bg-bannerZoneMD lg:bg-bannerZoneXL;
+  }
+
+  .home-banner-blur {
+    @apply bg-black/40;
+  }
+
+  .home-banner-text-container {
+    @apply w-11/12 mx-auto mt-32 text-gray-50 text-center py-20 lg:max-w-5xl lg:py-28 xl:py-36 fullHD:py-44;
+  }
+
+  .home-banner-text-h2 {
+    @apply text-2xl tracking-widest font-bold mb-4 xl:text-4xl fullHD:text-5xl fullHD:mb-10;
+  }
+
+  .home-banner-text-p {
+    @apply italic tracking-widest md:text-2xl md:leading-relaxed;
+  }
+
   /* *********************** Cards *********************** */
 
   /* ZoneXL Card*/

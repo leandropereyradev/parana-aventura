@@ -9,11 +9,12 @@ import LodgingDetailPage from "../pages/LodgingDetailPage";
 import FishListPage from "../pages/FishListPage";
 import FishDetailPage from "../pages/FishDetailPage";
 import Cart from "../pages/Cart";
+import HomePage from "../pages/HomePage";
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<></>} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/me" element={<UserPage />} />

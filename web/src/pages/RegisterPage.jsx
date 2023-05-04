@@ -1,6 +1,8 @@
 import RegisterForm from "../components/user/RegisterForm";
 
 const RegisterPage = () => {
+  window.scrollTo(0, 0);
+
   return (
     <div className="form-page-container bg-registerSM md:bg-registerMD lg:bg-registerXL">
       <div className="form-page-blur">

@@ -11,6 +11,8 @@ const initialState = {
 };
 
 const UserPage = () => {
+  window.scrollTo(0, 0);
+
   const { payload } = useParanaAventuraContext();
   const [userDetail, setUserDetail] = useState(initialState);
 

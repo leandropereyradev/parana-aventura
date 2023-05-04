@@ -1,6 +1,8 @@
 import LodgingList from "../components/lodging/LodgingList ";
 
 const LodgingListPage = () => {
+  window.scrollTo(0, 0);
+
   return (
     <div>
       <div className="lodgings-container shadow-[0px_0px_15px_10px]">

@@ -1,6 +1,8 @@
 import LoginForm from "../components/user/LoginForm";
 
 const LoginPage = () => {
+  window.scrollTo(0, 0);
+
   return (
     <div className="form-page-container bg-loginSM md:bg-loginMD lg:bg-loginXL">
       <div className="form-page-blur">

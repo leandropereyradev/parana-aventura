@@ -53,6 +53,24 @@ module.exports = withMT({
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682856260/parana-aventura/background/lodgingMD_rcjtst.jpg')",
         lodgingXL:
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682856260/parana-aventura/background/lodgingXL_f3gaba.jpg')",
+        homeSM:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683201035/parana-aventura/background/homeSM_ywvry8.jpg')",
+        homeMD:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683201035/parana-aventura/background/homeMD_efv31n.jpg')",
+        homeXL:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683201036/parana-aventura/background/homeXL_pjd0hl.jpg')",
+        bannerZoneSM:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683202408/parana-aventura/background/bannerZonaSM_kcn5ka.jpg')",
+        bannerZoneMD:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683202408/parana-aventura/background/bannerZonaMD_vscpre.jpg')",
+        bannerZoneXL:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683202408/parana-aventura/background/bannerZonaXL_tsj24h.jpg')",
+        bannerTurismoSM:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683204782/parana-aventura/background/bannerTurismoSM_kx8clz.jpg')",
+        bannerTurismoMD:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683204782/parana-aventura/background/bannerTurismoMD_eatopb.jpg')",
+        bannerTurismoXL:
+          "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1683204782/parana-aventura/background/bannerTurismoXL_lmtkft.jpg')",
       },
     },
     colors: {
