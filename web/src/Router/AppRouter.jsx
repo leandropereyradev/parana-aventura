@@ -8,6 +8,7 @@ import LodgingListPage from "../pages/LodgingListPage";
 import LodgingDetailPage from "../pages/LodgingDetailPage";
 import FishListPage from "../pages/FishListPage";
 import FishDetailPage from "../pages/FishDetailPage";
+import Cart from "../pages/Cart";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
       <Route path="/lodgings/:id" element={<LodgingDetailPage />} />
       <Route path="/fishes" element={<FishListPage />} />
       <Route path="/fishes/:id" element={<FishDetailPage />} />
+      <Route path="/lodgings/:id/cart" element={<Cart />} />
     </Routes>
   );
 };

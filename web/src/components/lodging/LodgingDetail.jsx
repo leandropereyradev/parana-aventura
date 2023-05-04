@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParanaAventuraContext } from "../../context/paranaAventuraContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ZoneCardXL from "../cards/ZoneCardXL";
 import CommentCard from "../cards/CommentCard";
+import LodgingImageCard from "../cards/LodgingImageCard";
 
 const LodgingDetail = ({ setTitle }) => {
   const [lodging, setLodging] = useState();
 
   const { action } = useParanaAventuraContext();
   const { id } = useParams();
+  const navegate = useNavigate();
 
   useEffect(() => {
     async function detailLodging() {
@@ -52,29 +54,7 @@ const LodgingDetail = ({ setTitle }) => {
       <div className="lodging-detail-container">
         {lodging !== undefined ? (
           <div className="lodging-detail-imagescard-container">
-            <div className="lodging-detail-images-container">
-              <div className="lodging-detail-image1-container">
-                <img
-                  src={lodging.image[0]}
-                  alt={lodging.name}
-                  className="lodging-detail-image-1"
-                />
-              </div>
-              <div className="lodging-detail-image2-container">
-                <img
-                  src={lodging.image[1]}
-                  alt={lodging.name}
-                  className="lodging-detail-image-2"
-                />
-              </div>
-              <div className="lodging-detail-image3-container">
-                <img
-                  src={lodging.image[2]}
-                  alt={lodging.name}
-                  className="lodging-detail-image-3"
-                />
-              </div>
-            </div>
+            <LodgingImageCard {...lodging} />
             <div className="lodging-detail-services_price-container">
               <div className="lodging-detail-services-container">
                 {lodging.services?.map((service, i) => (
@@ -96,6 +76,14 @@ const LodgingDetail = ({ setTitle }) => {
                   € / noche
                 </p>
               </div>
+            </div>
+            <div className="lodging-detail-btn-container">
+              <button
+                className="lodging-detail-btn"
+                onClick={() => navegate(`/lodgings/${id}/cart`)}
+              >
+                ¡La quiero!
+              </button>
             </div>
             <div className="lodging-detail-description-container">
               <p className="lodging-detail-description-p">

@@ -7,6 +7,9 @@ module.exports = withMT({
       screens: {
         fullHD: { raw: "(min-width: 1900px)" },
       },
+      gridTemplateColumns: {
+        "80-20": "80% 20%",
+      },
       backgroundImage: {
         registerSM:
           "url('https://res.cloudinary.com/dbr9eypvg/image/upload/v1682203709/parana-aventura/background/registerSM_tlv1cg.jpg')",

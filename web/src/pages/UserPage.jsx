@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParanaAventuraContext } from "../context/paranaAventuraContext";
 import UserDetail from "../components/user/UserDetail";
 import EditUserForm from "../components/user/EditUserForm ";
+import BookingDetail from "../components/user/BookingDetail";
 
 const initialState = {
   booking: true,
@@ -55,7 +56,11 @@ const UserPage = () => {
               Actualizar
             </button>
           </div>
-          {userDetail.booking && <div className="user-page-section-page"></div>}
+          {userDetail.booking && (
+            <div className="user-page-section-page">
+              <BookingDetail />
+            </div>
+          )}
           {userDetail.detail && (
             <div className="user-page-section-page">
               <UserDetail />

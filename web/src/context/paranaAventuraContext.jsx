@@ -3,6 +3,7 @@ import userServices from "../services/user";
 import fishingZoneServices from "../services/fishing-zone";
 import lodgingServices from "../services/lodging";
 import fishServices from "../services/fish";
+import bookingServices from "../services/booking";
 
 export const ParanaAventuraContext = createContext();
 
@@ -76,6 +77,16 @@ export const ParanaAventuraProvider = ({ children }) => {
     }
   };
 
+  const handleBookingContext = async (action, booking) => {
+    switch (action) {
+      case "BOOKING":
+        return await bookingServices.create(booking);
+
+      default:
+        break;
+    }
+  };
+
   return (
     <ParanaAventuraContext.Provider
       value={{
@@ -85,6 +96,7 @@ export const ParanaAventuraProvider = ({ children }) => {
           handleFishingZoneContext,
           handleLodgingContext,
           handleFishContext,
+          handleBookingContext,
         },
       }}
     >

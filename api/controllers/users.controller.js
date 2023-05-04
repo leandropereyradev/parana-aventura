@@ -28,7 +28,12 @@ module.exports.list = (req, res, next) => {
     .catch(next);
 };
 
-module.exports.detail = (req, res, next) => res.json(req.user);
+module.exports.detail = (req, res, next) => {
+  User.findOne({ _id: req.user.id })
+    .populate("bookings")
+    .then((user) => res.json(user))
+    .catch(next);
+};
 
 module.exports.update = (req, res, next) => {
   Object.assign(req.user, req.body);
@@ -48,6 +53,7 @@ module.exports.delete = (req, res, next) => {
 module.exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
+      console.log(user);
       if (!user) return next(createError(401, "Invalid email or password"));
 
       if (!user.confirm)
