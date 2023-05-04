@@ -414,7 +414,7 @@
   }
 
   .lodgings-section-container {
-    @apply pt-24 text-gray-800;
+    @apply pt-24 text-gray-800 lg:grid lg:grid-cols-3 lg:w-11/12 lg:mx-auto;
   }
 
   /* Lodging Detail Page */
